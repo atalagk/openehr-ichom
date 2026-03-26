@@ -68,13 +68,11 @@ definition
 					}
 					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Patient education score
 						value matches {
-							DV_ORDINAL matches {
-								1|[local::at0017],    -- 1 - Very poor
-								2|[local::at0018],    -- 2 - Poor
-								3|[local::at0019],    -- 3 - Moderate
-								4|[local::at0020],    -- 4 - Good
-								5|[local::at0021]     -- 5 - Very good
-							}
+							1|[local::at0017],    -- 1 - Very poor
+							2|[local::at0018],    -- 2 - Poor
+							3|[local::at0019],    -- 3 - Moderate
+							4|[local::at0020],    -- 4 - Good
+							5|[local::at0021]     -- 5 - Very good
 						}
 					}
 					ELEMENT[at0006] occurrences matches {0..1} matches {    -- Comment
