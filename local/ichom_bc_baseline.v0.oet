@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns="openEHR/v1/Template">
+  <id>a1b2c3d4-e5f6-7890-abcd-ef1234567890</id>
+  <name>ICHOM BC Baseline Assessment</name>
+  <description>
+    <original_author>
+      <item>
+        <key>date</key>
+        <value>2025-03-27</value>
+      </item>
+      <item>
+        <key>name</key>
+        <value>ICHOM openEHR Project</value>
+      </item>
+      <item>
+        <key>organisation</key>
+        <value>openehr-ichom</value>
+      </item>
+    </original_author>
+    <lifecycle_state>in_development</lifecycle_state>
+    <details>
+      <purpose>Template for recording ICHOM Breast Cancer Baseline Assessment data at time of diagnosis: primary diagnosis with TNM staging, histopathology, receptor biomarkers, genetic testing, anthropometrics, and MDT meeting record.</purpose>
+      <use>Use to capture ICHOM BC Standard Set v5.1 baseline variables at the time of initial diagnosis and treatment planning. Covers tumour factors, staging, pathology, biomarkers, and MDT recommendation.</use>
+      <misuse>Not for recording treatment details — use ICHOM BC Treatment Record template. Not for follow-up data — use ICHOM BC Follow-up template.</misuse>
+    </details>
+  </description>
+
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.report.v1" concept_name="Report">
+    <Rule path="/name" name="ICHOM Breast Cancer Baseline Assessment"/>
+
+    <!-- ============================================================ -->
+    <!-- Section 1: Diagnosis                                         -->
+    <!-- ============================================================ -->
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" path="/content">
+      <Rule path="/name" name="Diagnosis"/>
+
+      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis.v1" concept_name="Problem/Diagnosis" path="/items">
+        <Rule path="/name" name="Primary breast cancer diagnosis"/>
+        <!-- Constrain Problem/Diagnosis name to SNOMED 254837009 (malignant neoplasm of breast) at template level in AD -->
+
+        <!-- Clinical TNM staging — CLUSTER.tnm.v1 inserted into Specific details SLOT at0043 -->
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tnm.v1" concept_name="Tumour - TNM staging" path="/data[at0001]/items[at0043]">
+          <Rule path="/name" name="Clinical TNM staging"/>
+        </Items>
+
+        <!-- Pathological TNM staging — CLUSTER.tnm-pathological.v1 inserted into Specific details SLOT at0043 -->
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.tnm-pathological.v1" concept_name="Tumour - pathological TNM staging" path="/data[at0001]/items[at0043]">
+          <Rule path="/name" name="Pathological TNM staging"/>
+        </Items>
+      </Item>
+    </Content>
+
+    <!-- ============================================================ -->
+    <!-- Section 2: Histopathology                                    -->
+    <!-- ============================================================ -->
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" path="/content">
+      <Rule path="/name" name="Histopathology"/>
+
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.laboratory_test_result.v1" concept_name="Laboratory test result" path="/items">
+        <Rule path="/name" name="Breast cancer histopathology"/>
+
+        <!-- Specimen detail — CLUSTER.specimen.v1 into specimen SLOT at0065 -->
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.specimen.v1" concept_name="Specimen" path="/protocol[at0004]/items[at0065]">
+        </Items>
+
+        <!-- Invasion grade — analyte instance 1 -->
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.laboratory_test_analyte.v1" concept_name="Laboratory analyte result" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]">
+          <Rule path="/name" name="Invasion grade"/>
+        </Items>
+
+        <!-- DCIS grade — analyte instance 2 -->
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.laboratory_test_analyte.v1" concept_name="Laboratory analyte result" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]">
+          <Rule path="/name" name="DCIS grade"/>
+        </Items>
+
+        <!-- Tumour size — analyte instance 3 -->
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.laboratory_test_analyte.v1" concept_name="Laboratory analyte result" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]">
+          <Rule path="/name" name="Tumour size"/>
+        </Items>
+
+        <!-- Lymph nodes resected — analyte instance 4 -->
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.laboratory_test_analyte.v1" concept_name="Laboratory analyte result" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]">
+          <Rule path="/name" name="Lymph nodes resected"/>
+        </Items>
+
+        <!-- Lymph nodes involved — analyte instance 5 -->
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.laboratory_test_analyte.v1" concept_name="Laboratory analyte result" path="/data[at0001]/events[at0002]/data[at0003]/items[at0097]">
+          <Rule path="/name" name="Lymph nodes involved"/>
+        </Items>
+      </Item>
+    </Content>
+
+    <!-- ============================================================ -->
+    <!-- Section 3: Biomarkers                                        -->
+    <!-- ============================================================ -->
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" path="/content">
+      <Rule path="/name" name="Biomarkers"/>
+
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.laboratory_test_result.v1" concept_name="Laboratory test result" path="/items">
+        <Rule path="/name" name="Estrogen receptor status"/>
+      </Item>
+
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.laboratory_test_result.v1" concept_name="Laboratory test result" path="/items">
+        <Rule path="/name" name="Progesterone receptor status"/>
+      </Item>
+
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.laboratory_test_result.v1" concept_name="Laboratory test result" path="/items">
+        <Rule path="/name" name="HER2 receptor status"/>
+      </Item>
+    </Content>
+
+    <!-- ============================================================ -->
+    <!-- Section 4: Genetic testing                                   -->
+    <!-- ============================================================ -->
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" path="/content">
+      <Rule path="/name" name="Genetic testing"/>
+
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.laboratory_test_result.v1" concept_name="Laboratory test result" path="/items">
+        <Rule path="/name" name="Germline mutation testing"/>
+      </Item>
+
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.laboratory_test_result.v1" concept_name="Laboratory test result" path="/items">
+        <Rule path="/name" name="Molecular profiling"/>
+      </Item>
+    </Content>
+
+    <!-- ============================================================ -->
+    <!-- Section 5: Clinical measurements                             -->
+    <!-- ============================================================ -->
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" path="/content">
+      <Rule path="/name" name="Clinical measurements"/>
+
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.body_weight.v2" concept_name="Body weight" path="/items">
+      </Item>
+
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.height.v2" concept_name="Height/Length" path="/items">
+      </Item>
+    </Content>
+
+    <!-- ============================================================ -->
+    <!-- Section 6: MDT and treatment plan                            -->
+    <!-- ============================================================ -->
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" path="/content">
+      <Rule path="/name" name="MDT and treatment plan"/>
+
+      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.multidisciplinary_meeting.v0" concept_name="Multidisciplinary meeting" path="/items">
+        <Rule path="/name" name="MDT meeting record"/>
+      </Item>
+    </Content>
+
+  </definition>
+</template>
