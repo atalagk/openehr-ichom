@@ -7,3 +7,5 @@
 # Un-ignore local/ — archetypes and templates (what Archetype Designer syncs)
 !local/
 !local/**
+
+*.log
