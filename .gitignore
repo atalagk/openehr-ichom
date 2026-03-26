@@ -1,0 +1,9 @@
+# Ignore everything by default
+*
+
+# Un-ignore git and this file
+!.gitignore
+
+# Un-ignore local/ — archetypes and templates (what Archetype Designer syncs)
+!local/
+!local/**

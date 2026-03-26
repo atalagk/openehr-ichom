@@ -1,0 +1,148 @@
+archetype (adl_version=1.4; uid=9e4a7b2d-3f1c-4d8e-a5b6-8c2d0f6e9a1b)
+	openEHR-EHR-CLUSTER.complication_grading.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2025-03-27">
+		["name"] = <"ICHOM openEHR Project">
+		["organisation"] = <"openehr-ichom">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the standardised severity grading of a treatment complication, and to record attribution of the complication to treatment.">
+			keywords = <"complication","adverse event","Clavien-Dindo","CTCAE","grading","ICHOM","breast cancer","severity">
+			copyright = <"openehr-ichom">
+			use = <"Use as a nested cluster within EVALUATION.problem_diagnosis.v1 (inserted in the 'Specific details' SLOT at at0043) to provide standardised grading of a treatment complication or adverse event.
+
+For surgical complications: use the Clavien-Dindo grade element (Grades I–V).
+
+For systemic therapy adverse events: nest the published CLUSTER.ctcae.v1 archetype in the 'CTCAE classification' SLOT.
+
+Intended to capture ICHOM Breast Cancer variables: ComplicationImpact and ComplicationAttrTreatment.">
+			misuse = <"Not to be used as a standalone archetype — must be nested within an appropriate ENTRY archetype such as EVALUATION.problem_diagnosis.v1.
+
+Not to be used to record prognostic staging (TNM) — use CLUSTER.tnm or CLUSTER.tnm-pathological for that purpose.">
+		>
+	>
+
+definition
+	CLUSTER[at0000] matches {    -- Complication grading
+		items cardinality matches {1..*; unordered} matches {
+			ELEMENT[at0002] occurrences matches {0..1} matches {    -- Clavien-Dindo grade
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0012,    -- Grade I
+							at0013,    -- Grade II
+							at0014,    -- Grade IIIa
+							at0015,    -- Grade IIIb
+							at0016,    -- Grade IVa
+							at0017,    -- Grade IVb
+							at0018]    -- Grade V
+						}
+					}
+				}
+			}
+			allow_archetype CLUSTER[at0007] occurrences matches {0..1} matches {    -- CTCAE classification
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.ctcae\.v1/}
+			}
+			ELEMENT[at0005] occurrences matches {0..1} matches {    -- Attributed to treatment
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0024,    -- Yes
+							at0025,    -- No
+							at0026]    -- Unknown
+						}
+					}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..1} matches {    -- Comment
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Complication grading">
+					description = <"Standardised severity grading of a treatment complication or adverse event, using Clavien-Dindo classification (surgical) or NCI CTCAE v5.0 (systemic therapy) via nested CLUSTER.ctcae.v1.">
+				>
+				["at0002"] = <
+					text = <"Clavien-Dindo grade">
+					description = <"Severity grade according to the Clavien-Dindo classification for surgical complications. Use when the complication relates to a surgical procedure.">
+					comment = <"Maps to ICHOM variable: ComplicationImpact (when Clavien-Dindo system is used).">
+				>
+				["at0005"] = <
+					text = <"Attributed to treatment">
+					description = <"Is this complication or adverse event attributed to the cancer treatment?">
+					comment = <"Maps to ICHOM variable: ComplicationAttrTreatment.">
+				>
+				["at0006"] = <
+					text = <"Comment">
+					description = <"Additional narrative about the complication grading not captured in other fields.">
+				>
+				["at0007"] = <
+					text = <"CTCAE classification">
+					description = <"Structured CTCAE classification using the published openEHR CLUSTER.ctcae.v1 archetype. Use for systemic therapy adverse events (chemotherapy, hormonal therapy, targeted therapy).">
+					comment = <"Maps to ICHOM variable: ComplicationImpact (when CTCAE system is used).">
+				>
+				["at0012"] = <
+					text = <"Grade I">
+					description = <"Any deviation from the normal postoperative course without the need for pharmacological treatment or surgical, endoscopic, and radiological interventions. Allowed therapeutic regimens: drugs as antiemetics, antipyretics, analgesics, diuretics, electrolytes, and physiotherapy.">
+				>
+				["at0013"] = <
+					text = <"Grade II">
+					description = <"Requiring pharmacological treatment with drugs other than those allowed for Grade I complications. Blood transfusions and total parenteral nutrition are also included.">
+				>
+				["at0014"] = <
+					text = <"Grade IIIa">
+					description = <"Requiring surgical, endoscopic, or radiological intervention. Intervention not under general anaesthesia.">
+				>
+				["at0015"] = <
+					text = <"Grade IIIb">
+					description = <"Requiring surgical, endoscopic, or radiological intervention. Intervention under general anaesthesia.">
+				>
+				["at0016"] = <
+					text = <"Grade IVa">
+					description = <"Life-threatening complication (including CNS complications) requiring intermediate care/intensive care unit management. Single organ dysfunction (including dialysis).">
+				>
+				["at0017"] = <
+					text = <"Grade IVb">
+					description = <"Life-threatening complication requiring intermediate care/intensive care unit management. Multi-organ dysfunction.">
+				>
+				["at0018"] = <
+					text = <"Grade V">
+					description = <"Death of a patient as a result of the complication.">
+				>
+				["at0024"] = <
+					text = <"Yes">
+					description = <"The complication is attributed to cancer treatment.">
+				>
+				["at0025"] = <
+					text = <"No">
+					description = <"The complication is not attributed to cancer treatment.">
+				>
+				["at0026"] = <
+					text = <"Unknown">
+					description = <"It is unknown whether the complication is attributed to cancer treatment.">
+				>
+			>
+		>
+	>

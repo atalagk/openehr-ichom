@@ -1,0 +1,206 @@
+archetype (adl_version=1.4; uid=7a3c9e21-4b6d-4f8a-b2e5-1d0c8f7a3e4b)
+	openEHR-EHR-EVALUATION.multidisciplinary_meeting.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2025-03-27">
+		["name"] = <"ICHOM openEHR Project">
+		["organisation"] = <"openehr-ichom">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details about a multidisciplinary team (MDT) or tumour board meeting held to discuss and determine a treatment plan for an individual patient.">
+			keywords = <"MDT","multidisciplinary","tumour board","meeting","ICHOM","breast cancer","treatment plan">
+			copyright = <"openehr-ichom">
+			use = <"Use to record whether an MDT meeting was conducted, the date of the meeting, clinical question put to the board, and the treatment modalities recommended as a result.
+
+Intended for use within the ICHOM Breast Cancer Baseline Assessment composition to capture ICHOM variables MultMeet (meeting conducted) and MultRecTreatments (recommended treatments).">
+			misuse = <"Not to be used to record individual clinical recommendations — use EVALUATION.recommendation for each specific recommendation.
+
+Not to be used to record the treatment that was ultimately performed — use ACTION.procedure or ACTION.medication for that purpose.">
+		>
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Multidisciplinary meeting record
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Meeting conducted
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0009,    -- Yes
+									at0010,    -- No
+									at0011]    -- Unknown
+								}
+							}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Meeting date
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Meeting type
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Clinical question
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..*} matches {    -- Recommended treatment
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0012,    -- Surgery
+									at0013,    -- Radiotherapy
+									at0014,    -- Chemotherapy
+									at0015,    -- Hormonal therapy
+									at0016,    -- Targeted therapy
+									at0017,    -- Active surveillance
+									at0018]    -- Best supportive care
+								}
+							}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {    -- Recommendation narrative
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {    -- Participants
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0019] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0020] occurrences matches {0..1} matches {    -- Last updated
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0021] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Multidisciplinary meeting record">
+					description = <"Record of a multidisciplinary team (MDT) or tumour board meeting held to discuss a patient's case and determine a recommended treatment plan.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Meeting conducted">
+					description = <"Was a multidisciplinary team meeting conducted for this patient?">
+					comment = <"Maps to ICHOM variable: MultMeet.">
+				>
+				["at0003"] = <
+					text = <"Meeting date">
+					description = <"Date and/or time of the multidisciplinary meeting.">
+				>
+				["at0004"] = <
+					text = <"Meeting type">
+					description = <"Descriptive name or type of the multidisciplinary meeting (e.g. 'Breast tumour board', 'Weekly MDT').">
+				>
+				["at0005"] = <
+					text = <"Clinical question">
+					description = <"The clinical question or case summary put to the multidisciplinary team for discussion.">
+				>
+				["at0006"] = <
+					text = <"Recommended treatment">
+					description = <"Treatment modality(ies) recommended by the multidisciplinary team. Record one instance per recommended treatment.">
+					comment = <"Maps to ICHOM variable: MultRecTreatments. Multiple instances allowed for multi-modal recommendations.">
+				>
+				["at0007"] = <
+					text = <"Recommendation narrative">
+					description = <"Free-text narrative summary of the multidisciplinary team's recommendations and rationale.">
+				>
+				["at0008"] = <
+					text = <"Participants">
+					description = <"Structured details about the participants of the multidisciplinary meeting.">
+				>
+				["at0009"] = <
+					text = <"Yes">
+					description = <"A multidisciplinary meeting was conducted.">
+				>
+				["at0010"] = <
+					text = <"No">
+					description = <"A multidisciplinary meeting was not conducted.">
+				>
+				["at0011"] = <
+					text = <"Unknown">
+					description = <"It is not known whether a multidisciplinary meeting was conducted.">
+				>
+				["at0012"] = <
+					text = <"Surgery">
+					description = <"Surgical intervention was recommended by the MDT.">
+				>
+				["at0013"] = <
+					text = <"Radiotherapy">
+					description = <"Radiotherapy was recommended by the MDT.">
+				>
+				["at0014"] = <
+					text = <"Chemotherapy">
+					description = <"Chemotherapy was recommended by the MDT.">
+				>
+				["at0015"] = <
+					text = <"Hormonal therapy">
+					description = <"Hormonal (endocrine) therapy was recommended by the MDT.">
+				>
+				["at0016"] = <
+					text = <"Targeted therapy">
+					description = <"Targeted therapy (e.g. HER2-directed) was recommended by the MDT.">
+				>
+				["at0017"] = <
+					text = <"Active surveillance">
+					description = <"Active surveillance without immediate treatment was recommended by the MDT.">
+				>
+				["at0018"] = <
+					text = <"Best supportive care">
+					description = <"Best supportive / palliative care was recommended by the MDT.">
+				>
+				["at0019"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0020"] = <
+					text = <"Last updated">
+					description = <"Date this MDT meeting record was last updated.">
+				>
+				["at0021"] = <
+					text = <"Extension">
+					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
+					comment = <"For example: local information requirements; or additional metadata to align with FHIR or CIMI equivalents.">
+				>
+			>
+		>
+	>
