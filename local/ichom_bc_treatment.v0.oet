@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns="openEHR/v1/Template">
+  <id>b2c3d4e5-f6a7-8901-bcde-f12345678901</id>
+  <name>ICHOM BC Treatment Record</name>
+  <description>
+    <original_author>
+      <item>
+        <key>date</key>
+        <value>2025-03-27</value>
+      </item>
+      <item>
+        <key>name</key>
+        <value>ICHOM openEHR Project</value>
+      </item>
+      <item>
+        <key>organisation</key>
+        <value>openehr-ichom</value>
+      </item>
+    </original_author>
+    <lifecycle_state>in_development</lifecycle_state>
+    <details>
+      <purpose>Template for recording ICHOM Breast Cancer treatment data: surgical procedures, radiotherapy, systemic therapies (chemotherapy, hormonal, targeted), and treatment plan adherence.</purpose>
+      <use>Use to capture ICHOM BC Standard Set v5.1 treatment variables. Covers breast surgery, axilla surgery, axillary clearance, breast reconstruction, radiotherapy, and systemic therapies.</use>
+      <misuse>Not for baseline diagnosis data — use ICHOM BC Baseline Assessment template. Not for follow-up data — use ICHOM BC Follow-up template.</misuse>
+    </details>
+  </description>
+
+  <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.report.v1" concept_name="Report">
+
+    <!-- ============================================================ -->
+    <!-- Section 1: Breast surgery                                    -->
+    <!-- ============================================================ -->
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" name="Breast surgery" path="/content">
+
+      <Item xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.procedure.v1" concept_name="Procedure" name="Breast surgery" path="/items">
+      </Item>
+
+    </Content>
+
+    <!-- ============================================================ -->
+    <!-- Section 2: Axilla surgery                                    -->
+    <!-- ============================================================ -->
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" name="Axilla surgery" path="/content">
+
+      <Item xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.procedure.v1" concept_name="Procedure" name="Axilla surgery" path="/items">
+      </Item>
+
+    </Content>
+
+    <!-- ============================================================ -->
+    <!-- Section 3: Axillary clearance                                -->
+    <!-- ============================================================ -->
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" name="Axillary clearance" path="/content">
+
+      <Item xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.procedure.v1" concept_name="Procedure" name="Axillary clearance" path="/items">
+      </Item>
+
+    </Content>
+
+    <!-- ============================================================ -->
+    <!-- Section 4: Breast reconstruction                             -->
+    <!-- ============================================================ -->
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" name="Breast reconstruction" path="/content">
+
+      <Item xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.procedure.v1" concept_name="Procedure" name="Breast reconstruction" path="/items">
+
+        <!-- Device detail — CLUSTER.device.v1 into Procedure detail SLOT at0003 -->
+        <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.device.v1" concept_name="Medical device" path="/description[at0001]/items[at0003]">
+        </Items>
+
+      </Item>
+    </Content>
+
+    <!-- ============================================================ -->
+    <!-- Section 5: Radiotherapy                                      -->
+    <!-- ============================================================ -->
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" name="Radiotherapy" path="/content">
+
+      <Item xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.procedure.v1" concept_name="Procedure" name="Radiotherapy" path="/items">
+      </Item>
+
+    </Content>
+
+    <!-- ============================================================ -->
+    <!-- Section 6: Chemotherapy                                      -->
+    <!-- ============================================================ -->
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" name="Chemotherapy" path="/content">
+
+      <Item xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.medication.v1" concept_name="Medication management" name="Chemotherapy" path="/items">
+      </Item>
+
+    </Content>
+
+    <!-- ============================================================ -->
+    <!-- Section 7: Hormonal therapy                                  -->
+    <!-- ============================================================ -->
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" name="Hormonal therapy" path="/content">
+
+      <Item xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.medication.v1" concept_name="Medication management" name="Hormonal therapy" path="/items">
+      </Item>
+
+    </Content>
+
+    <!-- ============================================================ -->
+    <!-- Section 8: Targeted therapy                                  -->
+    <!-- ============================================================ -->
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" name="Targeted therapy" path="/content">
+
+      <Item xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.medication.v1" concept_name="Medication management" name="Targeted therapy" path="/items">
+      </Item>
+
+    </Content>
+
+    <!-- ============================================================ -->
+    <!-- Section 9: Treatment plan adherence                          -->
+    <!-- ============================================================ -->
+    <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" name="Treatment plan adherence" path="/content">
+
+      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.treatment_plan_adherence.v0" concept_name="Treatment plan adherence" path="/items">
+      </Item>
+
+    </Content>
+
+  </definition>
+</template>
