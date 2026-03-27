@@ -1,0 +1,792 @@
+archetype (adl_version=1.4; uid=9f8a7b6c-5d4e-3f2a-1b0c-9d8e7f6a5b4c)
+	openEHR-EHR-OBSERVATION.eortc_qlq_c30.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2025-03-27">
+		["name"] = <"ICHOM openEHR Project">
+		["organisation"] = <"openehr-ichom">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record responses to the EORTC QLQ-C30 Version 3.0 (European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30), a 30-item validated self-report questionnaire assessing health-related quality of life in cancer patients.">
+			keywords = <"EORTC","QLQ-C30","quality of life","QoL","patient-reported outcome","PROM","cancer","functioning","symptoms">
+			copyright = <"openehr-ichom">
+			use = <"Use to record patient responses to the EORTC QLQ-C30 Version 3.0 questionnaire and computed subscale scores.
+
+Items 1-28 are rated on a 4-point Likert scale: 1=Not at all, 2=A little, 3=Quite a bit, 4=Very much.
+Items 29-30 (global health status and QoL) use a 7-point scale: 1=Very poor, 7=Excellent.
+
+Scale scores are linear transformations to a 0-100 range following the EORTC QLQ-C30 scoring manual (Fayers et al., 2001).
+- Functional scales (PF, RF, EF, CF, SF, QL): higher score = better functioning/QoL.
+- Symptom scales and single items (FA, NV, PA, DY, SL, AP, CO, DI, FI): higher score = more severe symptoms.
+
+Intended for use within the ICHOM Breast Cancer PROMs composition at collection timepoints: baseline (pre-treatment), 6 months post-surgery, 1 year, and annually thereafter.">
+			misuse = <"Not to be used for the EORTC breast cancer-specific module — use OBSERVATION.eortc_qlq_br45.v0 for that purpose.
+Not to be used to record clinical assessments by healthcare professionals — use appropriate EVALUATION or OBSERVATION archetypes.">
+		>
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- EORTC QLQ-C30
+		data matches {
+			HISTORY[at0001] matches {    -- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..*} matches {    -- Any point in time
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+
+									-- ========== Items 1-5: Physical Functioning ==========
+
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Q1: Strenuous activities
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Q2: Long walk
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Q3: Short walk outside
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Q4: Need to stay in bed or chair
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {    -- Q5: Need help with self-care
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Items 6-7: Role Functioning ==========
+
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Q6: Limited in work or daily activities
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Q7: Limited in hobbies or leisure
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Item 8: Dyspnoea ==========
+
+									ELEMENT[at0011] occurrences matches {0..1} matches {    -- Q8: Short of breath
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Item 9: Pain (1 of 2) ==========
+
+									ELEMENT[at0012] occurrences matches {0..1} matches {    -- Q9: Had pain
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Item 10: Fatigue (1 of 3) ==========
+
+									ELEMENT[at0013] occurrences matches {0..1} matches {    -- Q10: Needed to rest
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Item 11: Insomnia ==========
+
+									ELEMENT[at0014] occurrences matches {0..1} matches {    -- Q11: Trouble sleeping
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Item 12: Fatigue (2 of 3) ==========
+
+									ELEMENT[at0015] occurrences matches {0..1} matches {    -- Q12: Felt weak
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Item 13: Appetite Loss ==========
+
+									ELEMENT[at0016] occurrences matches {0..1} matches {    -- Q13: Lacked appetite
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Items 14-15: Nausea and Vomiting ==========
+
+									ELEMENT[at0017] occurrences matches {0..1} matches {    -- Q14: Felt nauseated
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+									ELEMENT[at0018] occurrences matches {0..1} matches {    -- Q15: Vomited
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Item 16: Constipation ==========
+
+									ELEMENT[at0019] occurrences matches {0..1} matches {    -- Q16: Constipated
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Item 17: Diarrhoea ==========
+
+									ELEMENT[at0020] occurrences matches {0..1} matches {    -- Q17: Had diarrhoea
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Item 18: Fatigue (3 of 3) ==========
+
+									ELEMENT[at0021] occurrences matches {0..1} matches {    -- Q18: Tired
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Item 19: Pain (2 of 2) ==========
+
+									ELEMENT[at0022] occurrences matches {0..1} matches {    -- Q19: Pain interfered with daily activities
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Item 20: Cognitive Functioning (1 of 2) ==========
+
+									ELEMENT[at0023] occurrences matches {0..1} matches {    -- Q20: Difficulty concentrating
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Items 21-24: Emotional Functioning ==========
+
+									ELEMENT[at0024] occurrences matches {0..1} matches {    -- Q21: Felt tense
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+									ELEMENT[at0025] occurrences matches {0..1} matches {    -- Q22: Worried
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+									ELEMENT[at0026] occurrences matches {0..1} matches {    -- Q23: Felt irritable
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+									ELEMENT[at0027] occurrences matches {0..1} matches {    -- Q24: Felt depressed
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Item 25: Cognitive Functioning (2 of 2) ==========
+
+									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Q25: Difficulty remembering
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Items 26-27: Social Functioning ==========
+
+									ELEMENT[at0029] occurrences matches {0..1} matches {    -- Q26: Treatment interfered with family life
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+									ELEMENT[at0030] occurrences matches {0..1} matches {    -- Q27: Treatment interfered with social activities
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Item 28: Financial Difficulties ==========
+
+									ELEMENT[at0031] occurrences matches {0..1} matches {    -- Q28: Financial difficulties
+										value matches {
+											1.0|[local::at0051],    -- Not at all
+											2.0|[local::at0052],    -- A little
+											3.0|[local::at0053],    -- Quite a bit
+											4.0|[local::at0054]     -- Very much
+										}
+									}
+
+									-- ========== Items 29-30: Global Health Status / QoL (7-point) ==========
+
+									ELEMENT[at0032] occurrences matches {0..1} matches {    -- Q29: Overall health
+										value matches {
+											1.0|[local::at0055],    -- 1 - Very poor
+											2.0|[local::at0056],    -- 2
+											3.0|[local::at0057],    -- 3
+											4.0|[local::at0058],    -- 4
+											5.0|[local::at0059],    -- 5
+											6.0|[local::at0060],    -- 6
+											7.0|[local::at0061]     -- 7 - Excellent
+										}
+									}
+									ELEMENT[at0033] occurrences matches {0..1} matches {    -- Q30: Overall quality of life
+										value matches {
+											1.0|[local::at0055],    -- 1 - Very poor
+											2.0|[local::at0056],    -- 2
+											3.0|[local::at0057],    -- 3
+											4.0|[local::at0058],    -- 4
+											5.0|[local::at0059],    -- 5
+											6.0|[local::at0060],    -- 6
+											7.0|[local::at0061]     -- 7 - Excellent
+										}
+									}
+
+									-- ========== Scale scores (DV_QUANTITY 0..100) ==========
+
+									ELEMENT[at0034] occurrences matches {0..1} matches {    -- Physical Functioning score (PF)
+										value matches {
+											DV_QUANTITY matches {
+												units matches {"1"}
+												magnitude matches {|0.0..100.0|}
+											}
+										}
+									}
+									ELEMENT[at0035] occurrences matches {0..1} matches {    -- Role Functioning score (RF)
+										value matches {
+											DV_QUANTITY matches {
+												units matches {"1"}
+												magnitude matches {|0.0..100.0|}
+											}
+										}
+									}
+									ELEMENT[at0036] occurrences matches {0..1} matches {    -- Emotional Functioning score (EF)
+										value matches {
+											DV_QUANTITY matches {
+												units matches {"1"}
+												magnitude matches {|0.0..100.0|}
+											}
+										}
+									}
+									ELEMENT[at0037] occurrences matches {0..1} matches {    -- Cognitive Functioning score (CF)
+										value matches {
+											DV_QUANTITY matches {
+												units matches {"1"}
+												magnitude matches {|0.0..100.0|}
+											}
+										}
+									}
+									ELEMENT[at0038] occurrences matches {0..1} matches {    -- Social Functioning score (SF)
+										value matches {
+											DV_QUANTITY matches {
+												units matches {"1"}
+												magnitude matches {|0.0..100.0|}
+											}
+										}
+									}
+									ELEMENT[at0039] occurrences matches {0..1} matches {    -- Global Health Status / QoL score (QL)
+										value matches {
+											DV_QUANTITY matches {
+												units matches {"1"}
+												magnitude matches {|0.0..100.0|}
+											}
+										}
+									}
+									ELEMENT[at0040] occurrences matches {0..1} matches {    -- Fatigue score (FA)
+										value matches {
+											DV_QUANTITY matches {
+												units matches {"1"}
+												magnitude matches {|0.0..100.0|}
+											}
+										}
+									}
+									ELEMENT[at0041] occurrences matches {0..1} matches {    -- Nausea and Vomiting score (NV)
+										value matches {
+											DV_QUANTITY matches {
+												units matches {"1"}
+												magnitude matches {|0.0..100.0|}
+											}
+										}
+									}
+									ELEMENT[at0042] occurrences matches {0..1} matches {    -- Pain score (PA)
+										value matches {
+											DV_QUANTITY matches {
+												units matches {"1"}
+												magnitude matches {|0.0..100.0|}
+											}
+										}
+									}
+									ELEMENT[at0043] occurrences matches {0..1} matches {    -- Dyspnoea score (DY)
+										value matches {
+											DV_QUANTITY matches {
+												units matches {"1"}
+												magnitude matches {|0.0..100.0|}
+											}
+										}
+									}
+									ELEMENT[at0044] occurrences matches {0..1} matches {    -- Insomnia score (SL)
+										value matches {
+											DV_QUANTITY matches {
+												units matches {"1"}
+												magnitude matches {|0.0..100.0|}
+											}
+										}
+									}
+									ELEMENT[at0045] occurrences matches {0..1} matches {    -- Appetite Loss score (AP)
+										value matches {
+											DV_QUANTITY matches {
+												units matches {"1"}
+												magnitude matches {|0.0..100.0|}
+											}
+										}
+									}
+									ELEMENT[at0046] occurrences matches {0..1} matches {    -- Constipation score (CO)
+										value matches {
+											DV_QUANTITY matches {
+												units matches {"1"}
+												magnitude matches {|0.0..100.0|}
+											}
+										}
+									}
+									ELEMENT[at0047] occurrences matches {0..1} matches {    -- Diarrhoea score (DI)
+										value matches {
+											DV_QUANTITY matches {
+												units matches {"1"}
+												magnitude matches {|0.0..100.0|}
+											}
+										}
+									}
+									ELEMENT[at0048] occurrences matches {0..1} matches {    -- Financial Difficulties score (FI)
+										value matches {
+											DV_QUANTITY matches {
+												units matches {"1"}
+												magnitude matches {|0.0..100.0|}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0049] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0050] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"EORTC QLQ-C30">
+					description = <"The European Organisation for Research and Treatment of Cancer Quality of Life Questionnaire Core 30 (EORTC QLQ-C30) Version 3.0. A 30-item self-report questionnaire assessing health-related quality of life in cancer patients.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any point in time">
+					description = <"Default, unspecified point in time which may be explicitly defined in a template or at run-time.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Q1: Strenuous activities">
+					description = <"Do you have any trouble doing strenuous activities, like carrying a heavy shopping bag or a suitcase?">
+					comment = <"QLQ-C30 item 1. Contributes to Physical Functioning (PF) scale.">
+				>
+				["at0005"] = <
+					text = <"Q2: Long walk">
+					description = <"Do you have any trouble taking a long walk?">
+					comment = <"QLQ-C30 item 2. Contributes to Physical Functioning (PF) scale.">
+				>
+				["at0006"] = <
+					text = <"Q3: Short walk outside">
+					description = <"Do you have any trouble taking a short walk outside of the house?">
+					comment = <"QLQ-C30 item 3. Contributes to Physical Functioning (PF) scale.">
+				>
+				["at0007"] = <
+					text = <"Q4: Need to stay in bed or chair">
+					description = <"Do you need to stay in bed or a chair for most of the day?">
+					comment = <"QLQ-C30 item 4. Contributes to Physical Functioning (PF) scale.">
+				>
+				["at0008"] = <
+					text = <"Q5: Need help with self-care">
+					description = <"Do you need help with eating, dressing, washing yourself or using the toilet?">
+					comment = <"QLQ-C30 item 5. Contributes to Physical Functioning (PF) scale.">
+				>
+				["at0009"] = <
+					text = <"Q6: Limited in work or daily activities">
+					description = <"Were you limited in doing either your work or other daily activities?">
+					comment = <"QLQ-C30 item 6. During the past week. Contributes to Role Functioning (RF) scale.">
+				>
+				["at0010"] = <
+					text = <"Q7: Limited in hobbies or leisure">
+					description = <"Were you limited in pursuing your hobbies or other leisure time activities?">
+					comment = <"QLQ-C30 item 7. During the past week. Contributes to Role Functioning (RF) scale.">
+				>
+				["at0011"] = <
+					text = <"Q8: Short of breath">
+					description = <"Were you short of breath?">
+					comment = <"QLQ-C30 item 8. During the past week. Single item: Dyspnoea (DY).">
+				>
+				["at0012"] = <
+					text = <"Q9: Had pain">
+					description = <"Have you had pain?">
+					comment = <"QLQ-C30 item 9. During the past week. Contributes to Pain (PA) scale.">
+				>
+				["at0013"] = <
+					text = <"Q10: Needed to rest">
+					description = <"Did you need to rest?">
+					comment = <"QLQ-C30 item 10. During the past week. Contributes to Fatigue (FA) scale.">
+				>
+				["at0014"] = <
+					text = <"Q11: Trouble sleeping">
+					description = <"Have you had trouble sleeping?">
+					comment = <"QLQ-C30 item 11. During the past week. Single item: Insomnia (SL).">
+				>
+				["at0015"] = <
+					text = <"Q12: Felt weak">
+					description = <"Have you felt weak?">
+					comment = <"QLQ-C30 item 12. During the past week. Contributes to Fatigue (FA) scale.">
+				>
+				["at0016"] = <
+					text = <"Q13: Lacked appetite">
+					description = <"Have you lacked appetite?">
+					comment = <"QLQ-C30 item 13. During the past week. Single item: Appetite Loss (AP).">
+				>
+				["at0017"] = <
+					text = <"Q14: Felt nauseated">
+					description = <"Have you felt nauseated?">
+					comment = <"QLQ-C30 item 14. During the past week. Contributes to Nausea and Vomiting (NV) scale.">
+				>
+				["at0018"] = <
+					text = <"Q15: Vomited">
+					description = <"Have you vomited?">
+					comment = <"QLQ-C30 item 15. During the past week. Contributes to Nausea and Vomiting (NV) scale.">
+				>
+				["at0019"] = <
+					text = <"Q16: Constipated">
+					description = <"Have you been constipated?">
+					comment = <"QLQ-C30 item 16. During the past week. Single item: Constipation (CO).">
+				>
+				["at0020"] = <
+					text = <"Q17: Had diarrhoea">
+					description = <"Have you had diarrhoea?">
+					comment = <"QLQ-C30 item 17. During the past week. Single item: Diarrhoea (DI).">
+				>
+				["at0021"] = <
+					text = <"Q18: Tired">
+					description = <"Were you tired?">
+					comment = <"QLQ-C30 item 18. During the past week. Contributes to Fatigue (FA) scale.">
+				>
+				["at0022"] = <
+					text = <"Q19: Pain interfered with daily activities">
+					description = <"Did pain interfere with your daily activities?">
+					comment = <"QLQ-C30 item 19. During the past week. Contributes to Pain (PA) scale.">
+				>
+				["at0023"] = <
+					text = <"Q20: Difficulty concentrating">
+					description = <"Have you had difficulty in concentrating on things, like reading a newspaper or watching television?">
+					comment = <"QLQ-C30 item 20. During the past week. Contributes to Cognitive Functioning (CF) scale.">
+				>
+				["at0024"] = <
+					text = <"Q21: Felt tense">
+					description = <"Did you feel tense?">
+					comment = <"QLQ-C30 item 21. During the past week. Contributes to Emotional Functioning (EF) scale.">
+				>
+				["at0025"] = <
+					text = <"Q22: Worried">
+					description = <"Did you worry?">
+					comment = <"QLQ-C30 item 22. During the past week. Contributes to Emotional Functioning (EF) scale.">
+				>
+				["at0026"] = <
+					text = <"Q23: Felt irritable">
+					description = <"Did you feel irritable?">
+					comment = <"QLQ-C30 item 23. During the past week. Contributes to Emotional Functioning (EF) scale.">
+				>
+				["at0027"] = <
+					text = <"Q24: Felt depressed">
+					description = <"Did you feel depressed?">
+					comment = <"QLQ-C30 item 24. During the past week. Contributes to Emotional Functioning (EF) scale.">
+				>
+				["at0028"] = <
+					text = <"Q25: Difficulty remembering">
+					description = <"Have you had difficulty remembering things?">
+					comment = <"QLQ-C30 item 25. During the past week. Contributes to Cognitive Functioning (CF) scale.">
+				>
+				["at0029"] = <
+					text = <"Q26: Treatment interfered with family life">
+					description = <"Has your physical condition or medical treatment interfered with your family life?">
+					comment = <"QLQ-C30 item 26. During the past week. Contributes to Social Functioning (SF) scale.">
+				>
+				["at0030"] = <
+					text = <"Q27: Treatment interfered with social activities">
+					description = <"Has your physical condition or medical treatment interfered with your social activities?">
+					comment = <"QLQ-C30 item 27. During the past week. Contributes to Social Functioning (SF) scale.">
+				>
+				["at0031"] = <
+					text = <"Q28: Financial difficulties">
+					description = <"Has your physical condition or medical treatment caused you financial difficulties?">
+					comment = <"QLQ-C30 item 28. During the past week. Single item: Financial Difficulties (FI).">
+				>
+				["at0032"] = <
+					text = <"Q29: Overall health">
+					description = <"How would you rate your overall health during the past week?">
+					comment = <"QLQ-C30 item 29. Rated on a 7-point scale from 1 (Very poor) to 7 (Excellent). Contributes to Global Health Status / QoL (QL) scale.">
+				>
+				["at0033"] = <
+					text = <"Q30: Overall quality of life">
+					description = <"How would you rate your overall quality of life during the past week?">
+					comment = <"QLQ-C30 item 30. Rated on a 7-point scale from 1 (Very poor) to 7 (Excellent). Contributes to Global Health Status / QoL (QL) scale.">
+				>
+				["at0034"] = <
+					text = <"Physical Functioning score (PF)">
+					description = <"Computed Physical Functioning scale score, derived from items Q1-Q5. Linear transformation to 0-100 range per EORTC QLQ scoring manual. Higher score = better physical functioning.">
+					comment = <"EORTC QLQ-C30 scale abbreviation: PF2.">
+				>
+				["at0035"] = <
+					text = <"Role Functioning score (RF)">
+					description = <"Computed Role Functioning scale score, derived from items Q6-Q7. Linear transformation to 0-100 range. Higher score = better role functioning.">
+					comment = <"EORTC QLQ-C30 scale abbreviation: RF2.">
+				>
+				["at0036"] = <
+					text = <"Emotional Functioning score (EF)">
+					description = <"Computed Emotional Functioning scale score, derived from items Q21-Q24. Linear transformation to 0-100 range. Higher score = better emotional functioning.">
+					comment = <"EORTC QLQ-C30 scale abbreviation: EF.">
+				>
+				["at0037"] = <
+					text = <"Cognitive Functioning score (CF)">
+					description = <"Computed Cognitive Functioning scale score, derived from items Q20 and Q25. Linear transformation to 0-100 range. Higher score = better cognitive functioning.">
+					comment = <"EORTC QLQ-C30 scale abbreviation: CF.">
+				>
+				["at0038"] = <
+					text = <"Social Functioning score (SF)">
+					description = <"Computed Social Functioning scale score, derived from items Q26-Q27. Linear transformation to 0-100 range. Higher score = better social functioning.">
+					comment = <"EORTC QLQ-C30 scale abbreviation: SF.">
+				>
+				["at0039"] = <
+					text = <"Global Health Status / QoL score (QL)">
+					description = <"Computed Global Health Status and Quality of Life scale score, derived from items Q29-Q30. Linear transformation to 0-100 range. Higher score = better global health / QoL.">
+					comment = <"EORTC QLQ-C30 scale abbreviation: QL2.">
+				>
+				["at0040"] = <
+					text = <"Fatigue score (FA)">
+					description = <"Computed Fatigue symptom scale score, derived from items Q10, Q12, Q18. Linear transformation to 0-100 range. Higher score = more severe fatigue.">
+					comment = <"EORTC QLQ-C30 scale abbreviation: FA.">
+				>
+				["at0041"] = <
+					text = <"Nausea and Vomiting score (NV)">
+					description = <"Computed Nausea and Vomiting symptom scale score, derived from items Q14-Q15. Linear transformation to 0-100 range. Higher score = more severe nausea/vomiting.">
+					comment = <"EORTC QLQ-C30 scale abbreviation: NV.">
+				>
+				["at0042"] = <
+					text = <"Pain score (PA)">
+					description = <"Computed Pain symptom scale score, derived from items Q9 and Q19. Linear transformation to 0-100 range. Higher score = more severe pain.">
+					comment = <"EORTC QLQ-C30 scale abbreviation: PA.">
+				>
+				["at0043"] = <
+					text = <"Dyspnoea score (DY)">
+					description = <"Dyspnoea single-item score, derived from item Q8. Linear transformation to 0-100 range. Higher score = more severe dyspnoea.">
+					comment = <"EORTC QLQ-C30 scale abbreviation: DY.">
+				>
+				["at0044"] = <
+					text = <"Insomnia score (SL)">
+					description = <"Insomnia single-item score, derived from item Q11. Linear transformation to 0-100 range. Higher score = more severe insomnia.">
+					comment = <"EORTC QLQ-C30 scale abbreviation: SL.">
+				>
+				["at0045"] = <
+					text = <"Appetite Loss score (AP)">
+					description = <"Appetite Loss single-item score, derived from item Q13. Linear transformation to 0-100 range. Higher score = more severe appetite loss.">
+					comment = <"EORTC QLQ-C30 scale abbreviation: AP.">
+				>
+				["at0046"] = <
+					text = <"Constipation score (CO)">
+					description = <"Constipation single-item score, derived from item Q16. Linear transformation to 0-100 range. Higher score = more severe constipation.">
+					comment = <"EORTC QLQ-C30 scale abbreviation: CO.">
+				>
+				["at0047"] = <
+					text = <"Diarrhoea score (DI)">
+					description = <"Diarrhoea single-item score, derived from item Q17. Linear transformation to 0-100 range. Higher score = more severe diarrhoea.">
+					comment = <"EORTC QLQ-C30 scale abbreviation: DI.">
+				>
+				["at0048"] = <
+					text = <"Financial Difficulties score (FI)">
+					description = <"Financial Difficulties single-item score, derived from item Q28. Linear transformation to 0-100 range. Higher score = more severe financial difficulties.">
+					comment = <"EORTC QLQ-C30 scale abbreviation: FI.">
+				>
+				["at0049"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0050"] = <
+					text = <"Extension">
+					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
+					comment = <"For example: local information requirements; or additional metadata to align with FHIR or CIMI equivalents.">
+				>
+				["at0051"] = <
+					text = <"Not at all">
+					description = <"The symptom or problem is not present at all.">
+				>
+				["at0052"] = <
+					text = <"A little">
+					description = <"The symptom or problem is present to a small degree.">
+				>
+				["at0053"] = <
+					text = <"Quite a bit">
+					description = <"The symptom or problem is present to a moderate degree.">
+				>
+				["at0054"] = <
+					text = <"Very much">
+					description = <"The symptom or problem is present to a large degree.">
+				>
+				["at0055"] = <
+					text = <"1 - Very poor">
+					description = <"Overall health or quality of life rated as 1 (Very poor) on a 7-point scale.">
+				>
+				["at0056"] = <
+					text = <"2">
+					description = <"Overall health or quality of life rated as 2 on a 7-point scale.">
+				>
+				["at0057"] = <
+					text = <"3">
+					description = <"Overall health or quality of life rated as 3 on a 7-point scale.">
+				>
+				["at0058"] = <
+					text = <"4">
+					description = <"Overall health or quality of life rated as 4 on a 7-point scale.">
+				>
+				["at0059"] = <
+					text = <"5">
+					description = <"Overall health or quality of life rated as 5 on a 7-point scale.">
+				>
+				["at0060"] = <
+					text = <"6">
+					description = <"Overall health or quality of life rated as 6 on a 7-point scale.">
+				>
+				["at0061"] = <
+					text = <"7 - Excellent">
+					description = <"Overall health or quality of life rated as 7 (Excellent) on a 7-point scale.">
+				>
+			>
+		>
+	>
