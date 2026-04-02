@@ -1,0 +1,1190 @@
+archetype (adl_version=1.4; uid=7f3e2d1c-0b9a-4e8f-a5d6-3c2b1a0e9f8d)
+	openEHR-EHR-OBSERVATION.sacq.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2026-04-02">
+		["name"] = <"ICHOM openEHR Project">
+		["organisation"] = <"openehr-ichom">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record patient-reported comorbidities using the Self-Administered Comorbidity Questionnaire (SACQ), a validated instrument in which patients self-report the presence of common medical conditions, whether they receive treatment for each, and whether each limits their activities.">
+			keywords = <"SACQ","comorbidity","self-administered","patient-reported","chronic disease","multimorbidity","ICHOM">
+			copyright = <"openehr-ichom">
+			use = <"Use to capture ICHOM Breast Cancer Standard Set v5.1 comorbidity data at baseline (pre-treatment).
+
+The SACQ (Sangha et al., 2003, Arthritis Rheum) lists 13 common medical conditions. For each condition, patients answer three questions:
+1. Do you have this condition? (Yes/No)
+2. Do you receive treatment for it? (Yes/No)
+3. Does it limit your activities? (Yes/No)
+
+Patients may also record up to two additional conditions not listed.
+
+Total score = sum of all 'Yes' responses across presence, treatment, and limitation questions (range 0-39 for the 13 standard conditions; up to 45 including two 'other' conditions). Higher score = greater comorbidity burden.">
+			misuse = <"Not to be used to record clinician-assessed comorbidities — use EVALUATION.problem_diagnosis.v1 for that purpose.
+Not to be used for the ICHOM quality of life PROMs — use OBSERVATION.eortc_qlq_c30.v0 and OBSERVATION.eortc_qlq_br45.v0.">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6">
+		["build_uid"] = <"f8e7d6c5-b4a3-9281-7060-5f4e3d2c1b0a">
+		["references"] = <"Sangha O, Stucki G, Liang MH, Fossel AH, Katz JN. The Self-Administered Comorbidity Questionnaire: a new method to assess comorbidity for clinical and health services research. Arthritis Rheum. 2003 Apr 15;49(2):156-63.">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- SACQ
+		data matches {
+			HISTORY[at0001] matches {    -- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..*} matches {    -- Any point in time
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+
+									CLUSTER[at0004] occurrences matches {0..1} matches {    -- Heart disease
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0005] occurrences matches {0..1} matches {    -- Present
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0006] occurrences matches {0..1} matches {    -- Receiving treatment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0007] occurrences matches {0..1} matches {    -- Limits activities
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									CLUSTER[at0008] occurrences matches {0..1} matches {    -- High blood pressure
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0009] occurrences matches {0..1} matches {    -- Present
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0010] occurrences matches {0..1} matches {    -- Receiving treatment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0011] occurrences matches {0..1} matches {    -- Limits activities
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									CLUSTER[at0012] occurrences matches {0..1} matches {    -- Lung disease
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0013] occurrences matches {0..1} matches {    -- Present
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0014] occurrences matches {0..1} matches {    -- Receiving treatment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0015] occurrences matches {0..1} matches {    -- Limits activities
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									CLUSTER[at0016] occurrences matches {0..1} matches {    -- Diabetes
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0017] occurrences matches {0..1} matches {    -- Present
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0018] occurrences matches {0..1} matches {    -- Receiving treatment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0019] occurrences matches {0..1} matches {    -- Limits activities
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									CLUSTER[at0020] occurrences matches {0..1} matches {    -- Ulcer or stomach disease
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0021] occurrences matches {0..1} matches {    -- Present
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0022] occurrences matches {0..1} matches {    -- Receiving treatment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0023] occurrences matches {0..1} matches {    -- Limits activities
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									CLUSTER[at0024] occurrences matches {0..1} matches {    -- Kidney disease
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0025] occurrences matches {0..1} matches {    -- Present
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0026] occurrences matches {0..1} matches {    -- Receiving treatment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0027] occurrences matches {0..1} matches {    -- Limits activities
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									CLUSTER[at0028] occurrences matches {0..1} matches {    -- Liver disease
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0029] occurrences matches {0..1} matches {    -- Present
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0030] occurrences matches {0..1} matches {    -- Receiving treatment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0031] occurrences matches {0..1} matches {    -- Limits activities
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									CLUSTER[at0032] occurrences matches {0..1} matches {    -- Anaemia or other blood disease
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0033] occurrences matches {0..1} matches {    -- Present
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0034] occurrences matches {0..1} matches {    -- Receiving treatment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0035] occurrences matches {0..1} matches {    -- Limits activities
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									CLUSTER[at0036] occurrences matches {0..1} matches {    -- Cancer (other)
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0037] occurrences matches {0..1} matches {    -- Present
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0038] occurrences matches {0..1} matches {    -- Receiving treatment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0039] occurrences matches {0..1} matches {    -- Limits activities
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									CLUSTER[at0040] occurrences matches {0..1} matches {    -- Depression
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0041] occurrences matches {0..1} matches {    -- Present
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0042] occurrences matches {0..1} matches {    -- Receiving treatment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0043] occurrences matches {0..1} matches {    -- Limits activities
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									CLUSTER[at0044] occurrences matches {0..1} matches {    -- Osteoarthritis or degenerative arthritis
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0045] occurrences matches {0..1} matches {    -- Present
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0046] occurrences matches {0..1} matches {    -- Receiving treatment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0047] occurrences matches {0..1} matches {    -- Limits activities
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									CLUSTER[at0048] occurrences matches {0..1} matches {    -- Back pain
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0049] occurrences matches {0..1} matches {    -- Present
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0050] occurrences matches {0..1} matches {    -- Receiving treatment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0051] occurrences matches {0..1} matches {    -- Limits activities
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									CLUSTER[at0052] occurrences matches {0..1} matches {    -- Rheumatoid arthritis
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0053] occurrences matches {0..1} matches {    -- Present
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0054] occurrences matches {0..1} matches {    -- Receiving treatment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0055] occurrences matches {0..1} matches {    -- Limits activities
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									CLUSTER[at0056] occurrences matches {0..1} matches {    -- Other condition 1
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0057] occurrences matches {0..1} matches {    -- Condition name
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0058] occurrences matches {0..1} matches {    -- Present
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0059] occurrences matches {0..1} matches {    -- Receiving treatment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0060] occurrences matches {0..1} matches {    -- Limits activities
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									CLUSTER[at0061] occurrences matches {0..1} matches {    -- Other condition 2
+										items cardinality matches {0..*; unordered} matches {
+											ELEMENT[at0062] occurrences matches {0..1} matches {    -- Condition name
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0063] occurrences matches {0..1} matches {    -- Present
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0064] occurrences matches {0..1} matches {    -- Receiving treatment
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+											ELEMENT[at0065] occurrences matches {0..1} matches {    -- Limits activities
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															CODE_PHRASE matches {
+																terminology_id matches {
+																	TERMINOLOGY_ID matches {
+																		value matches {"local"}
+																	}
+																}
+																code_string matches {"at0069", "at0070"}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									ELEMENT[at0066] occurrences matches {0..1} matches {    -- Total comorbidity score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..45|}
+											}
+										}
+									}
+
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0067] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0068] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"SACQ">
+					description = <"Self-Administered Comorbidity Questionnaire (SACQ). A patient-reported instrument assessing the presence, treatment, and activity limitation caused by 13 common comorbid conditions, plus up to two patient-nominated additional conditions.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any point in time">
+					description = <"Default, unspecified point in time which may be explicitly defined in a template or at run-time.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Heart disease">
+					description = <"Patient-reported heart disease comorbidity, including presence, treatment, and activity limitation.">
+					comment = <"SACQ condition 1.">
+				>
+				["at0005"] = <
+					text = <"Present">
+					description = <"Does the patient have this condition?">
+				>
+				["at0006"] = <
+					text = <"Receiving treatment">
+					description = <"Does the patient receive treatment for this condition?">
+				>
+				["at0007"] = <
+					text = <"Limits activities">
+					description = <"Does this condition limit the patient's activities?">
+				>
+				["at0008"] = <
+					text = <"High blood pressure">
+					description = <"Patient-reported high blood pressure (hypertension) comorbidity.">
+					comment = <"SACQ condition 2.">
+				>
+				["at0009"] = <
+					text = <"Present">
+					description = <"Does the patient have this condition?">
+				>
+				["at0010"] = <
+					text = <"Receiving treatment">
+					description = <"Does the patient receive treatment for this condition?">
+				>
+				["at0011"] = <
+					text = <"Limits activities">
+					description = <"Does this condition limit the patient's activities?">
+				>
+				["at0012"] = <
+					text = <"Lung disease">
+					description = <"Patient-reported lung disease comorbidity (e.g. asthma, COPD, emphysema).">
+					comment = <"SACQ condition 3.">
+				>
+				["at0013"] = <
+					text = <"Present">
+					description = <"Does the patient have this condition?">
+				>
+				["at0014"] = <
+					text = <"Receiving treatment">
+					description = <"Does the patient receive treatment for this condition?">
+				>
+				["at0015"] = <
+					text = <"Limits activities">
+					description = <"Does this condition limit the patient's activities?">
+				>
+				["at0016"] = <
+					text = <"Diabetes">
+					description = <"Patient-reported diabetes comorbidity.">
+					comment = <"SACQ condition 4.">
+				>
+				["at0017"] = <
+					text = <"Present">
+					description = <"Does the patient have this condition?">
+				>
+				["at0018"] = <
+					text = <"Receiving treatment">
+					description = <"Does the patient receive treatment for this condition?">
+				>
+				["at0019"] = <
+					text = <"Limits activities">
+					description = <"Does this condition limit the patient's activities?">
+				>
+				["at0020"] = <
+					text = <"Ulcer or stomach disease">
+					description = <"Patient-reported ulcer or stomach disease comorbidity (e.g. peptic ulcer, gastritis).">
+					comment = <"SACQ condition 5.">
+				>
+				["at0021"] = <
+					text = <"Present">
+					description = <"Does the patient have this condition?">
+				>
+				["at0022"] = <
+					text = <"Receiving treatment">
+					description = <"Does the patient receive treatment for this condition?">
+				>
+				["at0023"] = <
+					text = <"Limits activities">
+					description = <"Does this condition limit the patient's activities?">
+				>
+				["at0024"] = <
+					text = <"Kidney disease">
+					description = <"Patient-reported kidney disease comorbidity.">
+					comment = <"SACQ condition 6.">
+				>
+				["at0025"] = <
+					text = <"Present">
+					description = <"Does the patient have this condition?">
+				>
+				["at0026"] = <
+					text = <"Receiving treatment">
+					description = <"Does the patient receive treatment for this condition?">
+				>
+				["at0027"] = <
+					text = <"Limits activities">
+					description = <"Does this condition limit the patient's activities?">
+				>
+				["at0028"] = <
+					text = <"Liver disease">
+					description = <"Patient-reported liver disease comorbidity.">
+					comment = <"SACQ condition 7.">
+				>
+				["at0029"] = <
+					text = <"Present">
+					description = <"Does the patient have this condition?">
+				>
+				["at0030"] = <
+					text = <"Receiving treatment">
+					description = <"Does the patient receive treatment for this condition?">
+				>
+				["at0031"] = <
+					text = <"Limits activities">
+					description = <"Does this condition limit the patient's activities?">
+				>
+				["at0032"] = <
+					text = <"Anaemia or other blood disease">
+					description = <"Patient-reported anaemia or other blood disease comorbidity.">
+					comment = <"SACQ condition 8.">
+				>
+				["at0033"] = <
+					text = <"Present">
+					description = <"Does the patient have this condition?">
+				>
+				["at0034"] = <
+					text = <"Receiving treatment">
+					description = <"Does the patient receive treatment for this condition?">
+				>
+				["at0035"] = <
+					text = <"Limits activities">
+					description = <"Does this condition limit the patient's activities?">
+				>
+				["at0036"] = <
+					text = <"Cancer (other)">
+					description = <"Patient-reported cancer other than the index breast cancer.">
+					comment = <"SACQ condition 9. In the context of the ICHOM Breast Cancer Standard Set, this refers to any cancer diagnosis other than the current breast cancer.">
+				>
+				["at0037"] = <
+					text = <"Present">
+					description = <"Does the patient have this condition?">
+				>
+				["at0038"] = <
+					text = <"Receiving treatment">
+					description = <"Does the patient receive treatment for this condition?">
+				>
+				["at0039"] = <
+					text = <"Limits activities">
+					description = <"Does this condition limit the patient's activities?">
+				>
+				["at0040"] = <
+					text = <"Depression">
+					description = <"Patient-reported depression comorbidity.">
+					comment = <"SACQ condition 10.">
+				>
+				["at0041"] = <
+					text = <"Present">
+					description = <"Does the patient have this condition?">
+				>
+				["at0042"] = <
+					text = <"Receiving treatment">
+					description = <"Does the patient receive treatment for this condition?">
+				>
+				["at0043"] = <
+					text = <"Limits activities">
+					description = <"Does this condition limit the patient's activities?">
+				>
+				["at0044"] = <
+					text = <"Osteoarthritis or degenerative arthritis">
+					description = <"Patient-reported osteoarthritis or degenerative arthritis comorbidity.">
+					comment = <"SACQ condition 11.">
+				>
+				["at0045"] = <
+					text = <"Present">
+					description = <"Does the patient have this condition?">
+				>
+				["at0046"] = <
+					text = <"Receiving treatment">
+					description = <"Does the patient receive treatment for this condition?">
+				>
+				["at0047"] = <
+					text = <"Limits activities">
+					description = <"Does this condition limit the patient's activities?">
+				>
+				["at0048"] = <
+					text = <"Back pain">
+					description = <"Patient-reported back pain comorbidity.">
+					comment = <"SACQ condition 12.">
+				>
+				["at0049"] = <
+					text = <"Present">
+					description = <"Does the patient have this condition?">
+				>
+				["at0050"] = <
+					text = <"Receiving treatment">
+					description = <"Does the patient receive treatment for this condition?">
+				>
+				["at0051"] = <
+					text = <"Limits activities">
+					description = <"Does this condition limit the patient's activities?">
+				>
+				["at0052"] = <
+					text = <"Rheumatoid arthritis">
+					description = <"Patient-reported rheumatoid arthritis comorbidity.">
+					comment = <"SACQ condition 13.">
+				>
+				["at0053"] = <
+					text = <"Present">
+					description = <"Does the patient have this condition?">
+				>
+				["at0054"] = <
+					text = <"Receiving treatment">
+					description = <"Does the patient receive treatment for this condition?">
+				>
+				["at0055"] = <
+					text = <"Limits activities">
+					description = <"Does this condition limit the patient's activities?">
+				>
+				["at0056"] = <
+					text = <"Other condition 1">
+					description = <"First patient-nominated additional medical condition not listed among the 13 standard SACQ conditions.">
+				>
+				["at0057"] = <
+					text = <"Condition name">
+					description = <"Free-text name of the additional condition as reported by the patient.">
+				>
+				["at0058"] = <
+					text = <"Present">
+					description = <"Does the patient have this condition?">
+				>
+				["at0059"] = <
+					text = <"Receiving treatment">
+					description = <"Does the patient receive treatment for this condition?">
+				>
+				["at0060"] = <
+					text = <"Limits activities">
+					description = <"Does this condition limit the patient's activities?">
+				>
+				["at0061"] = <
+					text = <"Other condition 2">
+					description = <"Second patient-nominated additional medical condition not listed among the 13 standard SACQ conditions.">
+				>
+				["at0062"] = <
+					text = <"Condition name">
+					description = <"Free-text name of the additional condition as reported by the patient.">
+				>
+				["at0063"] = <
+					text = <"Present">
+					description = <"Does the patient have this condition?">
+				>
+				["at0064"] = <
+					text = <"Receiving treatment">
+					description = <"Does the patient receive treatment for this condition?">
+				>
+				["at0065"] = <
+					text = <"Limits activities">
+					description = <"Does this condition limit the patient's activities?">
+				>
+				["at0066"] = <
+					text = <"Total comorbidity score">
+					description = <"Sum of all 'Yes' responses across presence, treatment, and activity limitation questions for all conditions. Range 0-39 for 13 standard conditions (up to 45 if both 'other' conditions are completed). Higher score indicates greater comorbidity burden.">
+					comment = <"Scoring: for each condition, 1 point for present=Yes, 1 point for treatment=Yes, 1 point for limits activities=Yes. Maximum for 13 standard conditions = 39. Maximum including 2 other conditions = 45.">
+				>
+				["at0067"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0068"] = <
+					text = <"Extension">
+					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
+					comment = <"For example: local information requirements; or additional metadata to align with FHIR or CIMI equivalents.">
+				>
+				["at0069"] = <
+					text = <"Yes">
+					description = <"The patient affirms this item is true.">
+				>
+				["at0070"] = <
+					text = <"No">
+					description = <"The patient denies this item is true.">
+				>
+			>
+		>
+	>
