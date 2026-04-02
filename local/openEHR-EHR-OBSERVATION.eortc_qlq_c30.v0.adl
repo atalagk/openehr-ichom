@@ -1,4 +1,4 @@
-archetype (adl_version=1.4; uid=9f8a7b6c-5d4e-3f2a-1b0c-9d8e7f6a5b4c)
+archetype (adl_version=1.4; uid=4641f495-a334-372a-ad8f-c47a5360a8ad)
 	openEHR-EHR-OBSERVATION.eortc_qlq_c30.v0
 
 concept
@@ -34,6 +34,10 @@ Intended for use within the ICHOM Breast Cancer PROMs composition at collection 
 Not to be used to record clinical assessments by healthcare professionals — use appropriate EVALUATION or OBSERVATION archetypes.">
 		>
 	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"4ce1be5f974497900b232f9d48ee1ecd">
+		["build_uid"] = <"64df70ce-e2ee-3e0e-96c6-4cb5950695b8">
+	>
 
 definition
 	OBSERVATION[at0000] matches {    -- EORTC QLQ-C30
@@ -44,430 +48,445 @@ definition
 						data matches {
 							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {0..*; unordered} matches {
-
-									-- ========== Items 1-5: Physical Functioning ==========
-
 									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Q1: Strenuous activities
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
 									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Q2: Long walk
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
 									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Q3: Short walk outside
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
 									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Q4: Need to stay in bed or chair
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
 									ELEMENT[at0008] occurrences matches {0..1} matches {    -- Q5: Need help with self-care
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Items 6-7: Role Functioning ==========
-
 									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Q6: Limited in work or daily activities
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
 									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Q7: Limited in hobbies or leisure
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Item 8: Dyspnoea ==========
-
 									ELEMENT[at0011] occurrences matches {0..1} matches {    -- Q8: Short of breath
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Item 9: Pain (1 of 2) ==========
-
 									ELEMENT[at0012] occurrences matches {0..1} matches {    -- Q9: Had pain
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Item 10: Fatigue (1 of 3) ==========
-
 									ELEMENT[at0013] occurrences matches {0..1} matches {    -- Q10: Needed to rest
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Item 11: Insomnia ==========
-
 									ELEMENT[at0014] occurrences matches {0..1} matches {    -- Q11: Trouble sleeping
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Item 12: Fatigue (2 of 3) ==========
-
 									ELEMENT[at0015] occurrences matches {0..1} matches {    -- Q12: Felt weak
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Item 13: Appetite Loss ==========
-
 									ELEMENT[at0016] occurrences matches {0..1} matches {    -- Q13: Lacked appetite
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Items 14-15: Nausea and Vomiting ==========
-
 									ELEMENT[at0017] occurrences matches {0..1} matches {    -- Q14: Felt nauseated
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
 									ELEMENT[at0018] occurrences matches {0..1} matches {    -- Q15: Vomited
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Item 16: Constipation ==========
-
 									ELEMENT[at0019] occurrences matches {0..1} matches {    -- Q16: Constipated
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Item 17: Diarrhoea ==========
-
 									ELEMENT[at0020] occurrences matches {0..1} matches {    -- Q17: Had diarrhoea
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Item 18: Fatigue (3 of 3) ==========
-
 									ELEMENT[at0021] occurrences matches {0..1} matches {    -- Q18: Tired
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Item 19: Pain (2 of 2) ==========
-
 									ELEMENT[at0022] occurrences matches {0..1} matches {    -- Q19: Pain interfered with daily activities
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Item 20: Cognitive Functioning (1 of 2) ==========
-
 									ELEMENT[at0023] occurrences matches {0..1} matches {    -- Q20: Difficulty concentrating
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Items 21-24: Emotional Functioning ==========
-
 									ELEMENT[at0024] occurrences matches {0..1} matches {    -- Q21: Felt tense
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
 									ELEMENT[at0025] occurrences matches {0..1} matches {    -- Q22: Worried
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
 									ELEMENT[at0026] occurrences matches {0..1} matches {    -- Q23: Felt irritable
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
 									ELEMENT[at0027] occurrences matches {0..1} matches {    -- Q24: Felt depressed
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Item 25: Cognitive Functioning (2 of 2) ==========
-
 									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Q25: Difficulty remembering
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Items 26-27: Social Functioning ==========
-
 									ELEMENT[at0029] occurrences matches {0..1} matches {    -- Q26: Treatment interfered with family life
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
 									ELEMENT[at0030] occurrences matches {0..1} matches {    -- Q27: Treatment interfered with social activities
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Item 28: Financial Difficulties ==========
-
 									ELEMENT[at0031] occurrences matches {0..1} matches {    -- Q28: Financial difficulties
 										value matches {
-											1.0|[local::at0051],    -- Not at all
-											2.0|[local::at0052],    -- A little
-											3.0|[local::at0053],    -- Quite a bit
-											4.0|[local::at0054]     -- Very much
+											1.0|[local::at0051],
+											2.0|[local::at0052],
+											3.0|[local::at0053],
+											4.0|[local::at0054]
 										}
 									}
-
-									-- ========== Items 29-30: Global Health Status / QoL (7-point) ==========
-
 									ELEMENT[at0032] occurrences matches {0..1} matches {    -- Q29: Overall health
 										value matches {
-											1.0|[local::at0055],    -- 1 - Very poor
-											2.0|[local::at0056],    -- 2
-											3.0|[local::at0057],    -- 3
-											4.0|[local::at0058],    -- 4
-											5.0|[local::at0059],    -- 5
-											6.0|[local::at0060],    -- 6
-											7.0|[local::at0061]     -- 7 - Excellent
+											1.0|[local::at0055],
+											2.0|[local::at0056],
+											3.0|[local::at0057],
+											4.0|[local::at0058],
+											5.0|[local::at0059],
+											6.0|[local::at0060],
+											7.0|[local::at0061]
 										}
 									}
 									ELEMENT[at0033] occurrences matches {0..1} matches {    -- Q30: Overall quality of life
 										value matches {
-											1.0|[local::at0055],    -- 1 - Very poor
-											2.0|[local::at0056],    -- 2
-											3.0|[local::at0057],    -- 3
-											4.0|[local::at0058],    -- 4
-											5.0|[local::at0059],    -- 5
-											6.0|[local::at0060],    -- 6
-											7.0|[local::at0061]     -- 7 - Excellent
+											1.0|[local::at0055],
+											2.0|[local::at0056],
+											3.0|[local::at0057],
+											4.0|[local::at0058],
+											5.0|[local::at0059],
+											6.0|[local::at0060],
+											7.0|[local::at0061]
 										}
 									}
-
-									-- ========== Scale scores (DV_QUANTITY 0..100) ==========
-
 									ELEMENT[at0034] occurrences matches {0..1} matches {    -- Physical Functioning score (PF)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0035] occurrences matches {0..1} matches {    -- Role Functioning score (RF)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0036] occurrences matches {0..1} matches {    -- Emotional Functioning score (EF)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0037] occurrences matches {0..1} matches {    -- Cognitive Functioning score (CF)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0038] occurrences matches {0..1} matches {    -- Social Functioning score (SF)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0039] occurrences matches {0..1} matches {    -- Global Health Status / QoL score (QL)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0040] occurrences matches {0..1} matches {    -- Fatigue score (FA)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0041] occurrences matches {0..1} matches {    -- Nausea and Vomiting score (NV)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0042] occurrences matches {0..1} matches {    -- Pain score (PA)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0043] occurrences matches {0..1} matches {    -- Dyspnoea score (DY)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0044] occurrences matches {0..1} matches {    -- Insomnia score (SL)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0045] occurrences matches {0..1} matches {    -- Appetite Loss score (AP)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0046] occurrences matches {0..1} matches {    -- Constipation score (CO)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0047] occurrences matches {0..1} matches {    -- Diarrhoea score (DI)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0048] occurrences matches {0..1} matches {    -- Financial Difficulties score (FI)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 								}
