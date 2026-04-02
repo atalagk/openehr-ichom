@@ -1,0 +1,152 @@
+archetype (adl_version=1.4; uid=9c4d3e2f-1a0b-4f8e-b7c6-2d3e4f5a6b7c)
+	openEHR-EHR-EVALUATION.vital_status.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2026-04-03">
+		["name"] = <"ICHOM openEHR Project">
+		["organisation"] = <"openehr-ichom">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record an individual's vital status — whether alive or deceased — including date of death and attribution of death to a specific disease.">
+			keywords = <"vital status","death","deceased","alive","mortality","date of death","survival","ICHOM">
+			copyright = <"openehr-ichom">
+			use = <"Use to record the vital status of an individual at a point in time, typically at each follow-up assessment.
+
+In the ICHOM Breast Cancer Standard Set v5.1, vital status is a required outcome variable collected at each follow-up timepoint (6 months, 1 year, annually thereafter). If the individual is deceased, the date of death and whether death was attributable to breast cancer are also recorded.
+
+'Death attributable to breast cancer' should be recorded as 'Yes' when breast cancer (or its treatment) was the primary or contributing cause of death, 'No' when death was from another cause, and 'Unknown' when cause of death information is unavailable.">
+			misuse = <"Not to be used to record a clinical diagnosis — use EVALUATION.problem_diagnosis.v1 for that purpose.
+Not to be used to record administrative death registration details.">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8">
+		["build_uid"] = <"b0a9c8d7-e6f5-4321-0fed-cba987654321">
+		["references"] = <"ICHOM Breast Cancer Standard Set v5.1, Feb 2024 — Survival and Disease Control, Vital Status variable.">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Vital status
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Vital status
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0006,    -- Alive
+									at0007]    -- Deceased
+								}
+							}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Date of death
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Death attributable to breast cancer
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0008,    -- Yes
+									at0009,    -- No
+									at0010]    -- Unknown
+								}
+							}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Comment
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0011] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0012] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Vital status">
+					description = <"Record of whether an individual is alive or deceased at a given point in time, with supporting details if deceased.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Vital status">
+					description = <"The individual's vital status at the time of recording.">
+					comment = <"Terminology binding recommended: SNOMED CT — Alive (438949009), Dead (419099009).">
+				>
+				["at0003"] = <
+					text = <"Date of death">
+					description = <"The date on which the individual died. Record only when vital status is 'Deceased'.">
+				>
+				["at0004"] = <
+					text = <"Death attributable to breast cancer">
+					description = <"Whether the individual's death was attributable to breast cancer or its treatment.">
+					comment = <"Record only when vital status is 'Deceased'. 'Yes' = breast cancer or its treatment was the primary or contributing cause of death. 'No' = death was from another cause. 'Unknown' = cause of death information is unavailable.">
+				>
+				["at0005"] = <
+					text = <"Comment">
+					description = <"Additional narrative about vital status not captured in other fields.">
+				>
+				["at0006"] = <
+					text = <"Alive">
+					description = <"The individual is alive at the time of recording.">
+				>
+				["at0007"] = <
+					text = <"Deceased">
+					description = <"The individual has died.">
+				>
+				["at0008"] = <
+					text = <"Yes">
+					description = <"Death was attributable to breast cancer or its treatment.">
+				>
+				["at0009"] = <
+					text = <"No">
+					description = <"Death was not attributable to breast cancer; another cause of death applies.">
+				>
+				["at0010"] = <
+					text = <"Unknown">
+					description = <"It is not known whether death was attributable to breast cancer.">
+				>
+				["at0011"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0012"] = <
+					text = <"Extension">
+					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
+					comment = <"For example: local information requirements; or additional metadata to align with FHIR or CIMI equivalents.">
+				>
+			>
+		>
+	>
