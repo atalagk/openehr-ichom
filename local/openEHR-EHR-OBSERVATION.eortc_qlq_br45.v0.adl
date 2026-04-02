@@ -37,6 +37,10 @@ NOTE: Item wording should be verified against the official EORTC QLQ-BR45 Versio
 Not to be used for EORTC QLQ-BR23 (the predecessor instrument).">
 		>
 	>
+	other_details = <
+		["build_uid"] = <"3d01b1c0-3d87-39d9-930e-f6f33ebb23e5">
+		["MD5-CAM-1.0.1"] = <"c9aec31f780a4cb8b0a0100fc84a58eb">
+	>
 
 definition
 	OBSERVATION[at0000] matches {    -- EORTC QLQ-BR45
@@ -47,478 +51,481 @@ definition
 						data matches {
 							ITEM_TREE[at0003] matches {    -- Tree
 								items cardinality matches {0..*; unordered} matches {
-
-									-- ========== BR1-BR3: Arm Symptoms ==========
-
 									ELEMENT[at0004] occurrences matches {0..1} matches {    -- BR1: Pain in arm or shoulder
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0005] occurrences matches {0..1} matches {    -- BR2: Swelling in arm or hand
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0006] occurrences matches {0..1} matches {    -- BR3: Difficulty raising arm or moving it sideways
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
-
-									-- ========== BR4-BR6: Breast Symptoms ==========
-
-									ELEMENT[at0007] occurrences matches {0..1} matches {    -- BR4: Pain in the area of affected breast
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- BR4: Pain in area of affected breast
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
-									ELEMENT[at0008] occurrences matches {0..1} matches {    -- BR5: Swelling in the area of affected breast
+									ELEMENT[at0008] occurrences matches {0..1} matches {    -- BR5: Swelling in area of affected breast
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
-									ELEMENT[at0009] occurrences matches {0..1} matches {    -- BR6: Oversensitivity in the area of affected breast
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- BR6: Oversensitivity in area of affected breast
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
-
-									-- ========== BR7-BR8: Hair Loss ==========
-
 									ELEMENT[at0010] occurrences matches {0..1} matches {    -- BR7: Had hair loss
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0011] occurrences matches {0..1} matches {    -- BR8: Upset by hair loss
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
-
-									-- ========== BR9-BR12: Body Image ==========
-
 									ELEMENT[at0012] occurrences matches {0..1} matches {    -- BR9: Felt less physically attractive due to illness or treatment
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0013] occurrences matches {0..1} matches {    -- BR10: Felt less feminine due to illness or treatment
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0014] occurrences matches {0..1} matches {    -- BR11: Difficult to look at self naked
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0015] occurrences matches {0..1} matches {    -- BR12: Dissatisfied with body
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
-
-									-- ========== BR13: Future Perspective ==========
-
 									ELEMENT[at0016] occurrences matches {0..1} matches {    -- BR13: Worried about health in future
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
-
-									-- ========== BR14-BR16: Sexual Functioning ==========
-
 									ELEMENT[at0017] occurrences matches {0..1} matches {    -- BR14: Interested in sex
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0018] occurrences matches {0..1} matches {    -- BR15: Sexually active
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0019] occurrences matches {0..1} matches {    -- BR16: Sex enjoyable
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
-
-									-- ========== BR17: Sexual Enjoyment (conditional) ==========
-
 									ELEMENT[at0020] occurrences matches {0..1} matches {    -- BR17: Pain or discomfort during sex
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
-
-									-- ========== BR18-BR24: Systemic Therapy Side Effects ==========
-
 									ELEMENT[at0021] occurrences matches {0..1} matches {    -- BR18: Hot flushes or sweating
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0022] occurrences matches {0..1} matches {    -- BR19: Heart pounding or racing
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0023] occurrences matches {0..1} matches {    -- BR20: Tingling or numbness in hands or feet
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0024] occurrences matches {0..1} matches {    -- BR21: Dry or irritated skin
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0025] occurrences matches {0..1} matches {    -- BR22: Skin soreness or skin problems
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0026] occurrences matches {0..1} matches {    -- BR23: Sore or irritated mouth or throat
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0027] occurrences matches {0..1} matches {    -- BR24: Nausea or vomiting due to systemic treatment
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
-
-									-- ========== BR25-BR30: Endocrine Therapy Symptoms ==========
-
 									ELEMENT[at0028] occurrences matches {0..1} matches {    -- BR25: Joint or muscle pain
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0029] occurrences matches {0..1} matches {    -- BR26: Bone pain or aching
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0030] occurrences matches {0..1} matches {    -- BR27: Mood swings
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0031] occurrences matches {0..1} matches {    -- BR28: Difficulty concentrating
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0032] occurrences matches {0..1} matches {    -- BR29: Memory problems
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0033] occurrences matches {0..1} matches {    -- BR30: Fatigue from endocrine treatment
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
-
-									-- ========== BR31-BR34: Breast Satisfaction ==========
-
 									ELEMENT[at0034] occurrences matches {0..1} matches {    -- BR31: Satisfied with appearance of breast(s)
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0035] occurrences matches {0..1} matches {    -- BR32: Satisfied with symmetry of breasts
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0036] occurrences matches {0..1} matches {    -- BR33: Self-conscious about breast appearance
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0037] occurrences matches {0..1} matches {    -- BR34: Breast appearance a problem when wearing clothes
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
-
-									-- ========== BR35-BR37: Skin/Mucosa Symptoms ==========
-
 									ELEMENT[at0038] occurrences matches {0..1} matches {    -- BR35: Skin problems (e.g. dryness or rash)
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0039] occurrences matches {0..1} matches {    -- BR36: Nail problems
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0040] occurrences matches {0..1} matches {    -- BR37: Mouth or mucous membrane problems
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
-
-									-- ========== BR38-BR39: Endocrine Sexual Symptoms ==========
-
 									ELEMENT[at0041] occurrences matches {0..1} matches {    -- BR38: Vaginal dryness
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0042] occurrences matches {0..1} matches {    -- BR39: Sexual discomfort due to vaginal symptoms
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
-
-									-- ========== BR40-BR45: Additional items (verify wording against official EORTC QLQ-BR45 v1.0) ==========
-
 									ELEMENT[at0043] occurrences matches {0..1} matches {    -- BR40: Worried about cancer recurrence
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0044] occurrences matches {0..1} matches {    -- BR41: Satisfied with cosmetic outcome of breast surgery
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0045] occurrences matches {0..1} matches {    -- BR42: Distressed by changes to breast(s)
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0046] occurrences matches {0..1} matches {    -- BR43: Problems with menopausal symptoms
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0047] occurrences matches {0..1} matches {    -- BR44: Trouble sleeping due to treatment
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
 									ELEMENT[at0048] occurrences matches {0..1} matches {    -- BR45: Impact on sexual attractiveness or intimacy
 										value matches {
-											1.0|[local::at0060],    -- Not at all
-											2.0|[local::at0061],    -- A little
-											3.0|[local::at0062],    -- Quite a bit
-											4.0|[local::at0063]     -- Very much
+											1.0|[local::at0060],
+											2.0|[local::at0061],
+											3.0|[local::at0062],
+											4.0|[local::at0063]
 										}
 									}
-
-									-- ========== Scale scores (DV_QUANTITY 0..100) ==========
-
 									ELEMENT[at0049] occurrences matches {0..1} matches {    -- Body Image score (BI)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0050] occurrences matches {0..1} matches {    -- Sexual Functioning score (SexF)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0051] occurrences matches {0..1} matches {    -- Breast Satisfaction score (BrSat)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0052] occurrences matches {0..1} matches {    -- Systemic Therapy Side Effects score (STSE)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0053] occurrences matches {0..1} matches {    -- Arm Symptoms score (AS)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0054] occurrences matches {0..1} matches {    -- Breast Symptoms score (BS)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0055] occurrences matches {0..1} matches {    -- Endocrine Therapy Symptoms score (ETS)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0056] occurrences matches {0..1} matches {    -- Skin/Mucosa Symptoms score (SkMu)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 									ELEMENT[at0057] occurrences matches {0..1} matches {    -- Endocrine Sexual Symptoms score (ESS)
 										value matches {
-											DV_QUANTITY matches {
-												units matches {"1"}
-												magnitude matches {|0.0..100.0|}
-											}
+											C_DV_QUANTITY <
+												
+												list = <
+													["1"] = <
+														units = <"1">
+														magnitude = <|0.0..100.0|>
+													>
+												>
+											>
 										}
 									}
 								}
