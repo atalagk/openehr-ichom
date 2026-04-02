@@ -54,50 +54,20 @@ definition
 										items cardinality matches {0..*; unordered} matches {
 											ELEMENT[at0005] occurrences matches {0..1} matches {    -- Present
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0006] occurrences matches {0..1} matches {    -- Receiving treatment
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0007] occurrences matches {0..1} matches {    -- Limits activities
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 										}
@@ -107,50 +77,20 @@ definition
 										items cardinality matches {0..*; unordered} matches {
 											ELEMENT[at0009] occurrences matches {0..1} matches {    -- Present
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0010] occurrences matches {0..1} matches {    -- Receiving treatment
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0011] occurrences matches {0..1} matches {    -- Limits activities
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 										}
@@ -160,50 +100,20 @@ definition
 										items cardinality matches {0..*; unordered} matches {
 											ELEMENT[at0013] occurrences matches {0..1} matches {    -- Present
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0014] occurrences matches {0..1} matches {    -- Receiving treatment
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0015] occurrences matches {0..1} matches {    -- Limits activities
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 										}
@@ -213,50 +123,20 @@ definition
 										items cardinality matches {0..*; unordered} matches {
 											ELEMENT[at0017] occurrences matches {0..1} matches {    -- Present
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0018] occurrences matches {0..1} matches {    -- Receiving treatment
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0019] occurrences matches {0..1} matches {    -- Limits activities
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 										}
@@ -266,50 +146,20 @@ definition
 										items cardinality matches {0..*; unordered} matches {
 											ELEMENT[at0021] occurrences matches {0..1} matches {    -- Present
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0022] occurrences matches {0..1} matches {    -- Receiving treatment
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0023] occurrences matches {0..1} matches {    -- Limits activities
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 										}
@@ -319,50 +169,20 @@ definition
 										items cardinality matches {0..*; unordered} matches {
 											ELEMENT[at0025] occurrences matches {0..1} matches {    -- Present
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0026] occurrences matches {0..1} matches {    -- Receiving treatment
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0027] occurrences matches {0..1} matches {    -- Limits activities
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 										}
@@ -372,50 +192,20 @@ definition
 										items cardinality matches {0..*; unordered} matches {
 											ELEMENT[at0029] occurrences matches {0..1} matches {    -- Present
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0030] occurrences matches {0..1} matches {    -- Receiving treatment
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0031] occurrences matches {0..1} matches {    -- Limits activities
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 										}
@@ -425,50 +215,20 @@ definition
 										items cardinality matches {0..*; unordered} matches {
 											ELEMENT[at0033] occurrences matches {0..1} matches {    -- Present
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0034] occurrences matches {0..1} matches {    -- Receiving treatment
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0035] occurrences matches {0..1} matches {    -- Limits activities
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 										}
@@ -478,50 +238,20 @@ definition
 										items cardinality matches {0..*; unordered} matches {
 											ELEMENT[at0037] occurrences matches {0..1} matches {    -- Present
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0038] occurrences matches {0..1} matches {    -- Receiving treatment
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0039] occurrences matches {0..1} matches {    -- Limits activities
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 										}
@@ -531,50 +261,20 @@ definition
 										items cardinality matches {0..*; unordered} matches {
 											ELEMENT[at0041] occurrences matches {0..1} matches {    -- Present
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0042] occurrences matches {0..1} matches {    -- Receiving treatment
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0043] occurrences matches {0..1} matches {    -- Limits activities
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 										}
@@ -584,50 +284,20 @@ definition
 										items cardinality matches {0..*; unordered} matches {
 											ELEMENT[at0045] occurrences matches {0..1} matches {    -- Present
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0046] occurrences matches {0..1} matches {    -- Receiving treatment
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0047] occurrences matches {0..1} matches {    -- Limits activities
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 										}
@@ -637,50 +307,20 @@ definition
 										items cardinality matches {0..*; unordered} matches {
 											ELEMENT[at0049] occurrences matches {0..1} matches {    -- Present
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0050] occurrences matches {0..1} matches {    -- Receiving treatment
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0051] occurrences matches {0..1} matches {    -- Limits activities
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 										}
@@ -690,50 +330,20 @@ definition
 										items cardinality matches {0..*; unordered} matches {
 											ELEMENT[at0053] occurrences matches {0..1} matches {    -- Present
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0054] occurrences matches {0..1} matches {    -- Receiving treatment
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0055] occurrences matches {0..1} matches {    -- Limits activities
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 										}
@@ -748,50 +358,20 @@ definition
 											}
 											ELEMENT[at0058] occurrences matches {0..1} matches {    -- Present
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0059] occurrences matches {0..1} matches {    -- Receiving treatment
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0060] occurrences matches {0..1} matches {    -- Limits activities
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 										}
@@ -806,50 +386,20 @@ definition
 											}
 											ELEMENT[at0063] occurrences matches {0..1} matches {    -- Present
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0064] occurrences matches {0..1} matches {    -- Receiving treatment
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 											ELEMENT[at0065] occurrences matches {0..1} matches {    -- Limits activities
 												value matches {
-													DV_CODED_TEXT matches {
-														defining_code matches {
-															CODE_PHRASE matches {
-																terminology_id matches {
-																	TERMINOLOGY_ID matches {
-																		value matches {"local"}
-																	}
-																}
-																code_string matches {"at0069", "at0070"}
-															}
-														}
-													}
+													0|[local::at0070],
+													1|[local::at0069]
 												}
 											}
 										}
@@ -1179,11 +729,11 @@ ontology
 				>
 				["at0069"] = <
 					text = <"Yes">
-					description = <"The patient affirms this item is true.">
+					description = <"The patient affirms this item is true. Ordinal value 1 — contributes to the total comorbidity score.">
 				>
 				["at0070"] = <
 					text = <"No">
-					description = <"The patient denies this item is true.">
+					description = <"The patient denies this item is true. Ordinal value 0 — does not contribute to the total comorbidity score.">
 				>
 			>
 		>
