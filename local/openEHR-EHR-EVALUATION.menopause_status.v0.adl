@@ -1,0 +1,169 @@
+archetype (adl_version=1.4; uid=3e7c2f1a-0b4d-4e9a-8c5b-1d2e3f4a5b6c)
+	openEHR-EHR-EVALUATION.menopause_status.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2026-04-02">
+		["name"] = <"ICHOM openEHR Project">
+		["organisation"] = <"openehr-ichom">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record an individual's menopausal status — the current phase of reproductive transition — including the date of last menstrual period and the basis on which the status was determined.">
+			keywords = <"menopause","menopausal","pre-menopausal","post-menopausal","peri-menopausal","LMP","last menstrual period","reproductive","ICHOM">
+			copyright = <"openehr-ichom">
+			use = <"Use to record menopausal status as a patient-reported or clinically assessed finding, typically at baseline in oncology and women's health contexts.
+
+In the ICHOM Breast Cancer Standard Set v5.1, menopausal status is a required patient factor captured at baseline. It influences treatment decisions (e.g. choice of endocrine therapy) and outcome interpretation.
+
+'Pre-menopausal' — regular menstrual cycles; no cessation.
+'Peri-menopausal' — irregular cycles or amenorrhoea for fewer than 12 consecutive months; hormonal transition underway.
+'Post-menopausal' — amenorrhoea for 12 or more consecutive months (natural), or status following bilateral oophorectomy (surgical), or following treatment-induced ovarian suppression/failure.">
+			misuse = <"Not to be used to record menstrual cycle details — use a dedicated menstrual cycle archetype for that purpose.
+Not to be used to record gynecological diagnoses — use EVALUATION.problem_diagnosis.v1.">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7">
+		["build_uid"] = <"a9b8c7d6-e5f4-3210-9876-5a4b3c2d1e0f">
+		["references"] = <"ICHOM Breast Cancer Standard Set v5.1, Feb 2024 — Patient Factors, Menopausal Status variable.
+Biglia N et al. Menopausal symptoms in breast cancer survivors. Maturitas. 2017.">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Menopause status
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Menopausal status
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0008,    -- Pre-menopausal
+									at0009,    -- Peri-menopausal
+									at0010,    -- Post-menopausal
+									at0011]    -- Unknown
+								}
+							}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Date of last menstrual period
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					ELEMENT[at0004] occurrences matches {0..1} matches {    -- Basis for determination
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0012,    -- Self-reported
+									at0013,    -- Clinical assessment
+									at0014,    -- Surgical
+									at0015]    -- Treatment-induced
+								}
+							}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Comment
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0006] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0007] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Menopause status">
+					description = <"The current menopausal status of an individual, reflecting their phase of reproductive transition.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Menopausal status">
+					description = <"The individual's current menopausal phase.">
+					comment = <"Terminology binding recommended: SNOMED CT — Pre-menopausal (309606002), Peri-menopausal (373717006), Post-menopausal (307429007).">
+				>
+				["at0003"] = <
+					text = <"Date of last menstrual period">
+					description = <"The date on which the individual's last menstrual period began. Used to support classification of menopausal status, particularly the 12-month amenorrhoea threshold for natural post-menopausal status.">
+				>
+				["at0004"] = <
+					text = <"Basis for determination">
+					description = <"The method or evidence used to determine the menopausal status.">
+				>
+				["at0005"] = <
+					text = <"Comment">
+					description = <"Additional narrative about menopausal status not captured in other fields.">
+				>
+				["at0006"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0007"] = <
+					text = <"Extension">
+					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
+					comment = <"For example: local information requirements; or additional metadata to align with FHIR or CIMI equivalents.">
+				>
+				["at0008"] = <
+					text = <"Pre-menopausal">
+					description = <"Regular menstrual cycles are present; no cessation of menstruation has occurred.">
+				>
+				["at0009"] = <
+					text = <"Peri-menopausal">
+					description = <"Irregular menstrual cycles or amenorrhoea for fewer than 12 consecutive months, reflecting the hormonal transition period preceding menopause.">
+				>
+				["at0010"] = <
+					text = <"Post-menopausal">
+					description = <"Amenorrhoea for 12 or more consecutive months (natural menopause), or absence of menstruation following bilateral oophorectomy, or following treatment-induced ovarian suppression or failure.">
+				>
+				["at0011"] = <
+					text = <"Unknown">
+					description = <"The menopausal status is not known or cannot be determined (e.g. following hysterectomy without oophorectomy, or current hormonal therapy masking status).">
+				>
+				["at0012"] = <
+					text = <"Self-reported">
+					description = <"Menopausal status is based on the individual's own report of their menstrual history and symptoms.">
+				>
+				["at0013"] = <
+					text = <"Clinical assessment">
+					description = <"Menopausal status is based on clinical evaluation, including hormonal assays (e.g. FSH, oestradiol levels) or clinician assessment.">
+				>
+				["at0014"] = <
+					text = <"Surgical">
+					description = <"Post-menopausal status is the result of bilateral oophorectomy (surgical menopause).">
+				>
+				["at0015"] = <
+					text = <"Treatment-induced">
+					description = <"Menopausal status is the result of medical treatment causing ovarian suppression or failure, such as chemotherapy, pelvic radiotherapy, or GnRH agonist therapy.">
+				>
+			>
+		>
+	>
