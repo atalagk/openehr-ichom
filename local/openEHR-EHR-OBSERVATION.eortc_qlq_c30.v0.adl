@@ -50,248 +50,248 @@ definition
 								items cardinality matches {0..*; unordered} matches {
 									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Q1: Strenuous activities
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Q2: Long walk
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Q3: Short walk outside
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Q4: Need to stay in bed or chair
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0008] occurrences matches {0..1} matches {    -- Q5: Need help with self-care
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Q6: Limited in work or daily activities
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Q7: Limited in hobbies or leisure
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0011] occurrences matches {0..1} matches {    -- Q8: Short of breath
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0012] occurrences matches {0..1} matches {    -- Q9: Had pain
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0013] occurrences matches {0..1} matches {    -- Q10: Needed to rest
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0014] occurrences matches {0..1} matches {    -- Q11: Trouble sleeping
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0015] occurrences matches {0..1} matches {    -- Q12: Felt weak
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0016] occurrences matches {0..1} matches {    -- Q13: Lacked appetite
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0017] occurrences matches {0..1} matches {    -- Q14: Felt nauseated
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0018] occurrences matches {0..1} matches {    -- Q15: Vomited
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0019] occurrences matches {0..1} matches {    -- Q16: Constipated
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0020] occurrences matches {0..1} matches {    -- Q17: Had diarrhoea
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0021] occurrences matches {0..1} matches {    -- Q18: Tired
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0022] occurrences matches {0..1} matches {    -- Q19: Pain interfered with daily activities
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0023] occurrences matches {0..1} matches {    -- Q20: Difficulty concentrating
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0024] occurrences matches {0..1} matches {    -- Q21: Felt tense
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0025] occurrences matches {0..1} matches {    -- Q22: Worried
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0026] occurrences matches {0..1} matches {    -- Q23: Felt irritable
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0027] occurrences matches {0..1} matches {    -- Q24: Felt depressed
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0028] occurrences matches {0..1} matches {    -- Q25: Difficulty remembering
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0029] occurrences matches {0..1} matches {    -- Q26: Treatment interfered with family life
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0030] occurrences matches {0..1} matches {    -- Q27: Treatment interfered with social activities
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0031] occurrences matches {0..1} matches {    -- Q28: Financial difficulties
 										value matches {
-											1.0|[local::at0051],
-											2.0|[local::at0052],
-											3.0|[local::at0053],
-											4.0|[local::at0054]
+											1|[local::at0051],
+											2|[local::at0052],
+											3|[local::at0053],
+											4|[local::at0054]
 										}
 									}
 									ELEMENT[at0032] occurrences matches {0..1} matches {    -- Q29: Overall health
 										value matches {
-											1.0|[local::at0055],
-											2.0|[local::at0056],
-											3.0|[local::at0057],
-											4.0|[local::at0058],
-											5.0|[local::at0059],
-											6.0|[local::at0060],
-											7.0|[local::at0061]
+											1|[local::at0055],
+											2|[local::at0056],
+											3|[local::at0057],
+											4|[local::at0058],
+											5|[local::at0059],
+											6|[local::at0060],
+											7|[local::at0061]
 										}
 									}
 									ELEMENT[at0033] occurrences matches {0..1} matches {    -- Q30: Overall quality of life
 										value matches {
-											1.0|[local::at0055],
-											2.0|[local::at0056],
-											3.0|[local::at0057],
-											4.0|[local::at0058],
-											5.0|[local::at0059],
-											6.0|[local::at0060],
-											7.0|[local::at0061]
+											1|[local::at0055],
+											2|[local::at0056],
+											3|[local::at0057],
+											4|[local::at0058],
+											5|[local::at0059],
+											6|[local::at0060],
+											7|[local::at0061]
 										}
 									}
 									ELEMENT[at0034] occurrences matches {0..1} matches {    -- Physical Functioning score (PF)
