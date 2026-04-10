@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><template xmlns="openEHR/v1/Template">
+    <id>c3d4e5f6-a7b8-9012-cdef-123456789012</id>
+    <name>ichom_bc_followup.v0</name>
+    <description>
+        <original_author>
+            <item>
+                <key>date</key>
+                <value>2025-03-27</value>
+            </item>
+            <item>
+                <key>name</key>
+                <value>ICHOM openEHR Project</value>
+            </item>
+            <item>
+                <key>organisation</key>
+                <value>openehr-ichom</value>
+            </item>
+        </original_author>
+        <lifecycle_state>in_development</lifecycle_state>
+        <details>
+            <purpose>Template for recording ICHOM Breast Cancer follow-up data: disease control and recurrence, vital status, treatment complications with grading, and reoperations.</purpose>
+            <use>Use to capture ICHOM BC Standard Set v5.1 follow-up variables at each post-treatment review point. Covers disease control, survival status, complications (Clavien-Dindo / CTCAE graded), and reoperations.</use>
+            <misuse>Not for baseline diagnosis data — use ICHOM BC Baseline Assessment template. Not for treatment details — use ICHOM BC Treatment Record template.</misuse>
+        </details>
+        <other_details>
+            <item>
+                <key>PARENT:MD5-CAM-1.0.1</key>
+                <value>A60D0B7F52F1F9C3C9B3518DB83ACDAE</value>
+            </item>
+            <item>
+                <key>sem_ver</key>
+                <value>1.0.0</value>
+            </item>
+            <item>
+                <key>build_uid</key>
+                <value/>
+            </item>
+            <item>
+                <key>MD5-CAM-1.0.1</key>
+                <value>7e9c1a29d59664581be30cab5ba7935d</value>
+            </item>
+            <item>
+                <key>original_language</key>
+                <value>ISO_639-1::en</value>
+            </item>
+        </other_details>
+    </description>
+    <definition archetype_id="openEHR-EHR-COMPOSITION.report.v1" concept_name="Report" name="ICHOM Breast Cancer - FOLLOW-UP" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:COMPOSITION">
+        <Content archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" name="Survival and Disease control" path="/content" xsi:type="tem:SECTION">
+            <Item archetype_id="openEHR-EHR-OBSERVATION.vital_status.v0" max="1" path="/items" xsi:type="tem:OBSERVATION"/>
+            <Item archetype_id="openEHR-EHR-EVALUATION.death_summary.v1" max="1" path="/items" xsi:type="tem:EVALUATION">
+                <Rule name="Death attributable to breast cancer" path="/data[at0001]/items[at0010]">
+                    <constraint xsi:type="tem:textConstraint">
+                        <includedValues>Yes</includedValues>
+                        <includedValues>No</includedValues>
+                        <includedValues>Unknown</includedValues>
+                    </constraint>
+                </Rule>
+            </Item>
+            <Item archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis.v1" concept_name="Problem/Diagnosis" name="Recurrence assessment" path="/items" xsi:type="tem:EVALUATION"/>
+        </Content>
+        <Content archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" name="Complications" path="/content" xsi:type="tem:SECTION">
+            <Item archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis.v1" concept_name="Problem/Diagnosis" name="Treatment complication" path="/items" xsi:type="tem:EVALUATION">
+                <Items archetype_id="openEHR-EHR-CLUSTER.complication_grading.v0" path="/data[at0001]/items[at0043]" xsi:type="tem:CLUSTER">
+                    <Items archetype_id="openEHR-EHR-CLUSTER.ctcae.v1" max="1" path="/items[at0007]" xsi:type="tem:CLUSTER"/>
+                </Items>
+            </Item>
+        </Content>
+        <Content archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Ad hoc heading" name="Reoperations" path="/content" xsi:type="tem:SECTION">
+            <Item archetype_id="openEHR-EHR-ACTION.procedure.v1" concept_name="Procedure" name="Reoperation" path="/items" xsi:type="tem:ACTION"/>
+        </Content>
+    </definition>
+    <integrity_checks archetype_id="openEHR-EHR-COMPOSITION.report.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">A60D0B7F52F1F9C3C9B3518DB83ACDAE</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-SECTION.adhoc.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">9FC6BA2D63BE451F034CE25153F4E298</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-OBSERVATION.vital_status.v0" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">27c69ee4af992b9efa10013bd769a51f</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-EVALUATION.death_summary.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">b7813e16b441c4b8c0da8ad75394bee6</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">23814F45898EDABAB347AF0E329C95B5</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-CLUSTER.ctcae.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">A7617F434767BA4FB95565EE2C02CEE5</digest>
+    </integrity_checks>
+    <integrity_checks archetype_id="openEHR-EHR-ACTION.procedure.v1" xmlns:tem="openEHR/v1/Template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tem:ArchetypeIntegrity">
+        <digest id="MD5-CAM-1.0.1">45BC112EC407C650BE2526518737BED2</digest>
+    </integrity_checks>
+</template>
